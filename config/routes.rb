@@ -5,4 +5,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :projects, only: [:new , :create, :show, :edit, :update] do
+    resources :memories, only: [:new , :create, :show, :edit, :update]
+    resources :cards, only: [:show]
+    get '/game', to: 'projects#game'
+  end
 end
