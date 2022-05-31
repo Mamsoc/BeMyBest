@@ -1,2 +1,6 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%# class banner dans pages/_home.scss %>
+<div class="home-banner">
+  <h1 class="banner-h1">Bienvenue sur BeMyBest!</h1>
+  <p class="banner-p">Le voyage au coeur des souvenirs commence ICI! </p>
+  <%= link_to "S'inscrire",  new_user_session_path, class: "btn btn-flat banner-btn" %>
+</div>
