@@ -1,0 +1,13 @@
+<h1> Bienvenue Antoine </h1>
+
+<p> L’anniversaire de votre meilleur ami approche ?
+Offrez-lui une expérience unique avec Bemybest </p>
+
+<%= link_to " créer un nouveau projet", new_project_path(@project)%>
+
+<% @projects.each do |project| %>
+  <% if project.present? %>
+    <p> Mes projets en cours :  </p>
+    <%=  project.title %>
+    <% end %>
+<% end %>
