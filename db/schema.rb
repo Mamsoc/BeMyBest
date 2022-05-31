@@ -10,9 +10,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_31_132754) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_31_135342) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cards", force: :cascade do |t|
+    t.string "title"
+    t.text "question"
+    t.bigint "scenario_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scenario_id"], name: "index_cards_on_scenario_id"
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.string "email"
+    t.integer "code"
+    t.bigint "user_id", null: false
+    t.bigint "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_invitations_on_project_id"
+    t.index ["user_id"], name: "index_invitations_on_user_id"
+  end
+
+  create_table "memories", force: :cascade do |t|
+    t.text "legend"
+    t.text "response"
+    t.bigint "user_id", null: false
+    t.bigint "card_id", null: false
+    t.bigint "project_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["card_id"], name: "index_memories_on_card_id"
+    t.index ["project_id"], name: "index_memories_on_project_id"
+    t.index ["user_id"], name: "index_memories_on_user_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.text "funfact"
+    t.text "description"
+    t.bigint "scenario_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scenario_id"], name: "index_projects_on_scenario_id"
+  end
+
+  create_table "scenarios", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +74,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_31_132754) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cards", "scenarios"
+  add_foreign_key "invitations", "projects"
+  add_foreign_key "invitations", "users"
+  add_foreign_key "memories", "cards"
+  add_foreign_key "memories", "projects"
+  add_foreign_key "memories", "users"
+  add_foreign_key "projects", "scenarios"
 end
