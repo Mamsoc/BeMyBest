@@ -3,7 +3,7 @@
 <p> L’anniversaire de votre meilleur ami approche ?
 Offrez-lui une expérience unique avec Bemybest </p>
 
-<%= link_to " créer un nouveau projet", new_project_path(@project)%>
+<%= link_to " créer un nouveau projet", new_project_path(@project), class: "btn btn-flat"%>
 
 <% @projects.each do |project| %>
   <% if project.present? %>

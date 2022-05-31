@@ -1,13 +1,21 @@
 class ProjectsController < ApplicationController
-
+  before_action :set_projects, only: [:show, :edit, :update, :destroy]
   def index
     @projects = Project.all
   end
 
   def new
-    @projects = Project.new
+    @project = Project.new
   end
 
+  def create
+    @project = Restaurant.new(projects_params)
+    if @project.save
+      redirect_to project_path(@project)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   private
 
@@ -15,7 +23,7 @@ class ProjectsController < ApplicationController
     params.require(:project).permit(:funfact, :description)
   end
 
-  def set_project
+  def set_projects
     @project = Project.find(params[:id])
   end
 end
