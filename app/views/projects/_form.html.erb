@@ -1,0 +1,6 @@
+<%= simple_form_for(project) do |f| %>
+  <%= f.input :title, label: "Titre du projet"%>
+  <%= f.input :description, label: "Description du projet" %>
+  <%= f.input :funfact, label: "Anecdote" %>
+  <%= f.submit class: "btn btn-flat" %>
+<% end %>
