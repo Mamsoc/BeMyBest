@@ -1,6 +1,9 @@
 <h1> Scenario </h1>
 
+
 <% @scenarios.each do |scenario| %>
-  <%= scenario.img %>
-  <%=  scenario.title %>
+  <div>
+  <%= scenario.title %>
+ <img src="<%= scenario.img %> ">
+ </div>
 <% end %>
