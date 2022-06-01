@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_action :set_projects, only: [:show, :update, :destroy]
 
   def index
-    @current_user_projects = Project.where(user_id: current_user)
+    @current_user_projects = policy_scope(Project.where(user_id: current_user))
   end
 
   def new
