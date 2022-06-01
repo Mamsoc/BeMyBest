@@ -1,0 +1,7 @@
+<% @memories.each do |memory| %>
+  <% if memory.present? %>
+    <h1> Mes souvenirs partagés :  </h1>
+    <%=  memory.photo %>
+    <%=  memory.legend %>
+    <% end %>
+<% end %>
