@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_projects, only: [:show, :edit, :update, :destroy]
+  before_action :set_projects, only: [:show, :update, :destroy]
   def index
     @projects = Project.all
   end
@@ -15,6 +15,10 @@ class ProjectsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @scenarios = Scenario.all
   end
 
   private

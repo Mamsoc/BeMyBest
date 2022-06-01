@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :projects, only: [:new , :create, :show, :edit, :update, :index] do
     resources :memories, only: [:new , :create, :show, :edit, :update]
-    resources :cards, only: [:show]
+    resources :cards, only: [:index, :show]
     get '/game', to: 'projects#game'
   end
 end
