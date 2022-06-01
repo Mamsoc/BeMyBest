@@ -1,0 +1,8 @@
+<h1> Mes souvenirs partagés :  </h1>
+<% @memories.each do |memory| %>
+  <% if memory.present? %>
+    <%= cl_image_tag memory.photo.key, height: 300, width: 400, crop: :fill %>
+    <%=  memory.legend %>
+    <% end %>
+<% end %>
+    <%= link_to "Ajouter un souvenir", new_project_memory_path(@project), :class => 'btn btn-flat' %>
