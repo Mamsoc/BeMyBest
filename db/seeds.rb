@@ -14,9 +14,9 @@ p "destroy user"
 User.destroy_all
 
 p "create scenarios"
-scenario1 = Scenario.create(title: "Anniversaire", img: "../app/assets/images/anniversaire.jpeg")
-scenario2 = Scenario.create(title: "EVJF", img: "app/assets/images/evjf.jpeg")
-scenario3 = Scenario.create(title: "mariages", img: "app/assets/images/anniversaire/mariages.jpeg")
+scenario1 = Scenario.create(title: "Anniversaire", img: "anniversaire.jpeg")
+scenario2 = Scenario.create(title: "EVJF", img: "evjf.jpeg")
+scenario3 = Scenario.create(title: "mariages", img: "mariages.jpeg")
 
 user = User.create(email: "elodie@example", password: "elodie@example")
 
