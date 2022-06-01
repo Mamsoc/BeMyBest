@@ -41,21 +41,25 @@ puts 'Creating invitations...'
 i = 0
 users.each do |user|
   unless user == user1
-    p i
     Invitation.create(email: user.email, code: '123456', user: user, project: project)
-
     i += 1
   end
 end
 puts "#{i} invitations created"
 
+# puts Rails.application.routes.url_helpers.image_path("memory2_photo.jpg")
+puts File.open(Rails.root.join('app/assets/images/img_seed/memory2_photo.jpg'))
+
 puts 'Creating memories...'
-i = 0
-n = 0
+
+n = 1
 users.each do |user|
   3.times do
-    Memory.create(legend: "légende #{(n + 1) * (i + 1)}", user: user, project: project)
-    n += 1
+    memory = Memory.new(legend: "légende #{n}", user: user, project: project)
+    file = File.open(Rails.root.join("app/assets/images/img_seed/memory#{n}_photo.jpg"))
+    memory.photo.attach(io: file, filename: "memory#{n}_photo.jpg", content_type: "image/jpg")
+    memory.save
+    p n += 1
   end
 end
-puts "#{n} memories created"
+puts "#{Memory.count} memories created"
