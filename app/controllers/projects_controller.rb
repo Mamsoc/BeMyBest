@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
   before_action :set_projects, only: [:show, :edit, :update, :destroy]
   def index
-    @projects = Project.all
+    @current_user_projects = Project.where(:admin_id == current_user)
   end
 
   def new
@@ -10,7 +10,9 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Restaurant.new(projects_params)
+    @project = Project.new(projects_params)
+    @project.user = current_user
+    authorize @project
     if @project.save
       redirect_to project_path(@project)
     else
@@ -26,5 +28,6 @@ class ProjectsController < ApplicationController
 
   def set_projects
     @project = Project.find(params[:id])
+    authorize @project
   end
 end
