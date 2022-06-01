@@ -1,9 +1,19 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Prompt:wght@100;200&display=swap');
 
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+// $body-font: "Work Sans", "Helvetica", "sans-serif";
+// $headers-font: "Nunito", "Helvetica", "sans-serif";
+
+// font BeMyBest
+$body-font: "Prompt", "Helvetica", "sans-serif";
+$h1-font: "Dancing Script", "Helvetica", "sans-serif";
+$h2-font: "Prompt", "Helvetica", "sans-serif";
+$h3-font: "Dancing Script", "Helvetica", "sans-serif";
+$p-font: "Prompt", "Helvetica", "sans-serif";
+$h6-font: "Prompt", "Helvetica", "sans-serif";
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

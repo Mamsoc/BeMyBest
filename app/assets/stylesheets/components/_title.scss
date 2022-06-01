@@ -1,0 +1,52 @@
+.h1 {
+  color: $title_logo;
+  font-family: $h1-font;
+  font-size: 48px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.h2 {
+  color: $subTitle_button_picto;
+  font-family: $h2-font;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.h3 {
+  color: $subTitle_button_picto;
+  font-family: $h3-font;
+  font-size: 20px;
+}
+
+.h4 {
+  color: $subTitle_button_picto;
+  font-family: $h3-font;
+  font-size: 16px;
+}
+
+.h5 {
+  color: $content;
+  font-family: $h6-font;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+
+.h6 {
+  color: $content;
+  font-family: $h6-font;
+  font-size: 8px;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
+
+.p {
+  color: $content;
+  font-family: $p-font;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 100;
+}
