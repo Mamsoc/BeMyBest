@@ -4,18 +4,17 @@ class ProjectPolicy < ApplicationPolicy
     # def resolve
     #   scope.all
     # end
+  end
 
     def index?
       record.user == @current_user
-    end
-
-    def new?
-      create?
     end
 
     def create?
       true
     end
 
-  end
+    def new?
+      create?
+    end
 end
