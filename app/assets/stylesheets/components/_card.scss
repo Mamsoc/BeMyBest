@@ -3,11 +3,10 @@
     align-items: center;
     grid-template-columns: 1fr;
     max-width: 350px;
-    display:grid;
+    display:block;
   }
 
   .card-category {
-    position: relative;
     margin-bottom: 22px;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -15,9 +14,10 @@
     max-height: 300px;
   }
 
-  .card-garden p {
-    position: absolute;
-    font-size: 12px;
-    opacity: 0.7;
+  .img-card {
+    max-width: 300px;
+    object-fit: cover;
   }
+
+
 }

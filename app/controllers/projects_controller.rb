@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_projects, only: [:show, :update, :destroy]
+  before_action :set_projects, only: [:show, :update, :edit, :destroy]
 
   def index
     @current_user_projects = policy_scope(Project.where(user_id: current_user))
@@ -23,13 +23,20 @@ class ProjectsController < ApplicationController
 
   def edit
     @scenarios = Scenario.all
-    authorize @scenarios
+    authorize @project
+  end
+
+  def update
+    authorize @project
+    if @project.update(projects_params)
+      redirect_to projects_path, notice: "Scenario choisi"
+    end
   end
 
   private
 
   def projects_params
-    params.require(:project).permit(:funfact, :description)
+    params.require(:project).permit(:funfact, :description, :scenario_id)
   end
 
   def set_projects
