@@ -2,12 +2,12 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: yellowgreen;
+  background: $subTitle_button_picto;
   opacity: 0.8;
 }
 
 .btn-flat:hover {
-  background: yellowgreen;
+  background: $subTitle_button_picto;
   color: white;
   opacity: 1;
 }

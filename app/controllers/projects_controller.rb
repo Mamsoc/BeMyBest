@@ -1,20 +1,29 @@
 class ProjectsController < ApplicationController
-  before_action :set_projects, only: [:show, :edit, :update, :destroy]
+  before_action :set_projects, only: [:show, :update, :destroy]
+
   def index
-    @projects = Project.all
+    @current_user_projects = policy_scope(Project.where(user_id: current_user))
   end
 
   def new
     @project = Project.new
+    authorize @project
   end
 
   def create
-    @project = Restaurant.new(projects_params)
+    @project = Project.new(projects_params)
+    @project.user = current_user
+    authorize @project
     if @project.save
       redirect_to project_path(@project)
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @scenarios = Scenario.all
+    authorize @scenarios
   end
 
   private
@@ -25,5 +34,6 @@ class ProjectsController < ApplicationController
 
   def set_projects
     @project = Project.find(params[:id])
+    authorize @project
   end
 end

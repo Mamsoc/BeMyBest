@@ -1,6 +1,10 @@
 <h1> Scenario </h1>
 
-<% @scenarios.each do |scenario| %>
-  <%= scenario.img %>
-  <%=  scenario.title %>
-<% end %>
+<div class="cards">
+  <% @scenarios.each do |scenario| %>
+  <div class="card-category" >
+    <%= image_tag "#{scenario.img}" %>
+   <p> <%= scenario.title %> </p>
+  </div>
+  <% end %>
+</div>
