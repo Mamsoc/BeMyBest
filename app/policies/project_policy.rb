@@ -6,15 +6,15 @@ class ProjectPolicy < ApplicationPolicy
     # end
   end
 
-    def index?
-      record.user == @current_user
-    end
+  def index?
+    true
+  end
 
-    def create?
-      true
-    end
+  def create?
+    true
+  end
 
-    def new?
-      create?
-    end
+  def new?
+    create?
+  end
 end
