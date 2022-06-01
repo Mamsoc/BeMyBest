@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_01_102030) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_01_132747) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -81,6 +81,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_01_102030) do
     t.datetime "updated_at", null: false
     t.string "title"
     t.bigint "user_id", null: false
+    t.bigint "scenario_id"
+    t.index ["scenario_id"], name: "index_projects_on_scenario_id"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
@@ -113,5 +115,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_01_102030) do
   add_foreign_key "memories", "cards"
   add_foreign_key "memories", "projects"
   add_foreign_key "memories", "users"
+  add_foreign_key "projects", "scenarios"
   add_foreign_key "projects", "users"
 end
