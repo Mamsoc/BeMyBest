@@ -1,6 +1,5 @@
 <%= simple_form_for([@project, @memory]) do |f| %>
   <%= f.input :photo, as: :file %>
-  <%= f.input :legend, label: "Titre" %>
-  <%= f.input :description, label: "Description de votre souvenir" %>
+  <%= f.input :legend, label: "Description de votre souvenir" %>
   <%= f.submit class: "btn btn-flat", label: "Ajouter" %>
 <% end %>
