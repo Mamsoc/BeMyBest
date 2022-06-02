@@ -1,20 +1,22 @@
 .footer {
-  background: $title_logo;
+  background: $light-gray;
   height: 100px;
   padding: 0px 50px;
   bottom: 40px;
-  color: $subTitle_button_picto;
+  color: $content;
   text-align: center;
   font-family: $h2-font;
 }
 .footer-links {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  color: $title_logo;
+  padding-top: 15px;
 }
 .footer-links a {
-  color: #454343;
-  opacity: 0.15;
+  color: $title_logo;
+  opacity: 0.80;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -24,4 +26,8 @@
 }
 .footer .fa-heart {
   color: $subTitle_button_picto;
+}
+
+.footer-copyright {
+  padding: 10px;
 }
