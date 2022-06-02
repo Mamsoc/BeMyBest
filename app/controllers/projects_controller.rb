@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
   private
 
   def projects_params
-    params.require(:project).permit(:funfact, :description, :scenario_id)
+    params.require(:project).permit(:title, :description, :photo, :scenario_id)
   end
 
   def set_projects
