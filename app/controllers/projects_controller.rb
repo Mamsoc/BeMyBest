@@ -36,7 +36,13 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def win
+    @project = Project.find(params[:project_id])
+    authorize @project
+  end
+
   private
+
 
   def projects_params
     params.require(:project).permit(:title, :description, :photo, :scenario_id)

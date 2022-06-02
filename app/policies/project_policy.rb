@@ -30,7 +30,7 @@ class ProjectPolicy < ApplicationPolicy
     create?
   end
 
-  def game?
+  def win?
     true
   end
 end
