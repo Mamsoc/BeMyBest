@@ -1,10 +1,11 @@
 
 <h1> Scenarios </h1>
 <div class="cards">
-  <form action="<%=project_path(@project)%>" method="patch">
+  <form action="<%=project_path(@project)%>" method="post">
+  <input type="hidden" name="_method" value="patch">
     <% @scenarios.each do |scenario| %>
         <label>
-          <input type="radio" name= "scenario_id" value= "<%= scenario.id%>">
+          <input type="radio" name= "project[scenario_id]" value= "<%= scenario.id%>">
             <%= image_tag scenario.img,  class:"img-card"%>
         </label>
         <br> <br>
