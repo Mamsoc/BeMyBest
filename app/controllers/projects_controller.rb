@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(projects_params)
     @project.user = current_user
+    @project.code = SecureRandom.hex(5)
     authorize @project
     if @project.save
       redirect_to projects_path
