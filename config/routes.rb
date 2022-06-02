@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     resources :cards, only: [:index, :show]
     get '/game', to: 'projects#game'
   end
+  resources :invitations, only: :show
 end
