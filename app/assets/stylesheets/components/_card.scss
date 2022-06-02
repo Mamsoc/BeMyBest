@@ -14,10 +14,16 @@
     max-height: 300px;
   }
 
+  .card-category > a {
+    text-decoration: none;
+    color: $content;
+  }
   .img-card {
-    max-width: 300px;
+    max-width: 320px;
     object-fit: cover;
   }
+
+
 
 
 }

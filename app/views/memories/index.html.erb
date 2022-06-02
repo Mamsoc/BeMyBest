@@ -1,8 +1,16 @@
+
 <h1> Mes souvenirs partagés :  </h1>
+
+<%= link_to "Ajouter un souvenir", new_project_memory_path(@project), :class => 'btn btn-flat' %>
+ <div class="cards">
 <% @memories.each do |memory| %>
   <% if memory.present? %>
-    <%= cl_image_tag memory.photo.key, height: 300, width: 400, crop: :fill %>
-    <%=  memory.legend %>
-    <% end %>
+   <div class="card-category d-block m-3">
+    <%= cl_image_tag memory.photo.key, class: "img-card d-block w-100"%>
+    <div>
+      <p><%=  memory.legend %> </p>
+    </div>
+  <% end %>
+  </div>
 <% end %>
-    <%= link_to "Ajouter un souvenir", new_project_memory_path(@project), :class => 'btn btn-flat' %>
+</div>

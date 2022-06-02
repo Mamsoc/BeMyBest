@@ -29,4 +29,8 @@ class ProjectPolicy < ApplicationPolicy
   def new?
     create?
   end
+
+  def game?
+    true
+  end
 end

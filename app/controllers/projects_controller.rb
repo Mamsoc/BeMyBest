@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
     @project.user = current_user
     authorize @project
     if @project.save
-      redirect_to project_path(@project)
+      redirect_to projects_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,13 +30,16 @@ class ProjectsController < ApplicationController
     authorize @project
     if @project.update(projects_params)
       redirect_to projects_path, notice: "Scenario choisi"
+    else
+      render :new, status: :unprocessable_entity
     end
   end
+
 
   private
 
   def projects_params
-    params.require(:project).permit(:funfact, :description, :scenario_id)
+    params.require(:project).permit(:title, :description, :photo, :scenario_id)
   end
 
   def set_projects

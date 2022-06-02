@@ -14,14 +14,20 @@ p "destroy projects"
 Project.destroy_all
 p "destroy users"
 User.destroy_all
+p "destroy card"
+Card.destroy_all
 p "destroy scenarios"
 Scenario.destroy_all
 
 puts 'Creating scenarios...'
-scenario1 = Scenario.create(title: "Anniversaire", img: "anniversaire.jpeg")
-scenario2 = Scenario.create(title: "EVJF", img: "evjf.jpeg")
-scenario3 = Scenario.create(title: "mariages", img: "mariages.jpeg")
+scenario1 = Scenario.create(title: "Anniversaire", img: "anniversaire.jpg")
+scenario2 = Scenario.create(title: "EVJF", img: "evjf.jpg")
+scenario3 = Scenario.create(title: "mariages", img: "mariages.jpg")
 puts '3 scenarios created!'
+
+card1= Card.create(title: "parents", question: "En quelle année se sont rencontrés tes parents", scenario: scenario1)
+card2= Card.create(title: "amis", question: "qui est ta meilleure amie", scenario: scenario1)
+card3= Card.create(title: "passion", question: "quelle est ta passion", scenario: scenario1)
 
 puts 'Creating users...'
 user1 = User.create(email: "anthoine@example.com", password: "anthoine@example.com")
@@ -55,7 +61,7 @@ puts 'Creating memories...'
 n = 1
 users.each do |user|
   3.times do
-    memory = Memory.new(legend: "légende #{n}", user: user, project: project)
+    memory = Memory.new(legend: "légende #{n}", response: "a", user: user, project: project)
     file = File.open(Rails.root.join("app/assets/images/img_seed/memory#{n}_photo.jpg"))
     memory.photo.attach(io: file, filename: "memory#{n}_photo.jpg", content_type: "image/jpg")
     memory.save
@@ -63,3 +69,5 @@ users.each do |user|
   end
 end
 puts "#{Memory.count} memories created"
+
+puts 'Creating cards...'
