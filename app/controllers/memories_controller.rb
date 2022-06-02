@@ -3,7 +3,11 @@ class MemoriesController < ApplicationController
   before_action :set_memory, except: [:create, :new, :index]
   def index
     @memories = policy_scope(Memory)
+  end
 
+  def show
+    @memories = Memory.all
+    authorize @memories
   end
 
   def edit
