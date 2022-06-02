@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :memories, only: [:new , :create, :show, :edit, :update, :index]
     resources :cards, only: [:index, :show]
     get '/game', to: 'projects#game'
+
   end
 end

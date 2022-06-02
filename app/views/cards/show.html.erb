@@ -1,0 +1,16 @@
+
+<h1> Souvenirs disponibles  </h1>
+
+<p><%= @card.question %></p>
+ <div class="cards">
+<% @memories.each do |memory| %>
+  <% if memory.present? %>
+   <div class="card-category d-block m-3">
+    <%= cl_image_tag memory.photo.key, class: "img-card d-block w-100"%>
+    <div>
+      <p><%=  memory.legend %> </p>
+    </div>
+  <% end %>
+  </div>
+<% end %>
+</div>

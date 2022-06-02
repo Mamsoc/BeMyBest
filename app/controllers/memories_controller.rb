@@ -2,7 +2,7 @@ class MemoriesController < ApplicationController
   before_action :set_project
   before_action :set_memory, except: [:create, :new, :index]
   def index
-    @memories = policy_scope(Memory)
+    @memories = policy_scope(@project.memories)
   end
 
   def show

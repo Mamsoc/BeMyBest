@@ -1,11 +1,23 @@
 <h1 class = "d-none" > Mon jeu personnalisé  </h1>
 
 <div class = "cards">
-  <% @cards.each do |card| %>
-    <% if card.present? %>
+  <% if @cards.any? %>
+    <% @cards.each do |card| %>
       <div class = "card-category">
+        <% card_memory = @memories.find_by(card: card) %>
         <p>?</p>
+        <%= card.question %>
+        <% if card_memory %>
+          <div class="card-category d-block m-3">
+            <%= cl_image_tag card_memory.photo.key, class: "img-card d-block w-100"%>
+          <div>
+        <% else %>
+        <p>Affecter la carte</p>
+        <%= link_to "Choisir un souvenir", project_card_path(@project, card) %>
+        <% end %>
       </div>
-      <% end %>
+    <% end %>
+    <% else %>
+    <p>Le scenario est vide</p>
   <% end %>
 </div>
