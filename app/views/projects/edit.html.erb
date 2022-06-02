@@ -1,7 +1,6 @@
-
 <h1> Scenarios </h1>
 <div class="cards">
-  <form action="<%=project_path(@project)%>" method="post">
+  <%= form_with url: project_path(@project), method: :patch, html: { turbo: false} do |form|%>
   <input type="hidden" name="_method" value="patch">
     <% @scenarios.each do |scenario| %>
         <label>
@@ -10,6 +9,6 @@
         </label>
         <br> <br>
       <% end  %>
-    </div>
   <button type="submit" class="btn btn-flat"> Click </button>
-</form>
+<% end %>
+</div>
