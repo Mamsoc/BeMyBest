@@ -7,6 +7,19 @@
   opacity: 0.8;
 }
 
+.btn-home {
+  color: $content;
+  padding: 10px 7px;
+  font-family: $h1-font;
+  font-size: 31px;
+  border-radius: 4px;
+  background: $subTitle_button_picto;
+  width: 200px;
+  text-decoration: none;
+  margin-left: 25%;
+  margin-top: 590px;
+}
+
 .btn-flat:hover {
   background: $subTitle_button_picto;
   color: $content;

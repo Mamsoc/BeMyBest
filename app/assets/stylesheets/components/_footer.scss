@@ -1,11 +1,11 @@
 .footer {
   background: $light-gray;
-  height: 100px;
-  padding: 0px 50px;
-  bottom: 40px;
+  height: 80px;
+  padding: 0px 20px;
   color: $content;
   text-align: center;
-  font-family: $h2-font;
+  font-family: $p-font;
+  font-size: 12px;
 }
 .footer-links {
   display: flex;
@@ -23,6 +23,7 @@
 }
 .footer-links a:hover {
   opacity: 1;
+  color: $subTitle_button_picto;
 }
 .footer .fa-heart {
   color: $subTitle_button_picto;
