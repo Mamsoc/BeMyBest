@@ -25,9 +25,11 @@ scenario2 = Scenario.create(title: "EVJF", img: "evjf.jpg")
 scenario3 = Scenario.create(title: "mariages", img: "mariages.jpg")
 puts '3 scenarios created!'
 
+puts 'Creating cards...'
 card1= Card.create(title: "parents", question: "En quelle année se sont rencontrés tes parents", scenario: scenario1)
 card2= Card.create(title: "amis", question: "qui est ta meilleure amie", scenario: scenario1)
 card3= Card.create(title: "passion", question: "quelle est ta passion", scenario: scenario1)
+puts '3 cards created!'
 
 puts 'Creating users...'
 user1 = User.create(email: "anthoine@example.com", password: "anthoine@example.com")
@@ -36,11 +38,13 @@ user3 = User.create(email: "manu@example.com", password: "manu@example.com")
 user4 = User.create(email: "lidwine@example.com", password: "lidwine@example.com")
 user5 = User.create(email: "hadrien@example.com", password: "hadrien@example.com")
 users = User.all
-
 puts '5 users created!'
 
 puts 'Creating projects...'
-project = Project.create(title: "Anniversaire de Lucie", description: "yeay c'est l'anniv de Lucie preparons-lui une surprise", user: user1)
+project = Project.create(title: "Anniversaire de Lucile", description: "yeay c'est l'anniv de Lucile preparons-lui une surprise", user: user1, scenario_id: scenario1)
+img_project = File.open(Rails.root.join("app/assets/images/img_seed/Lucile.jpg"))
+project.photo.attach(io: img_project, filename: "Lucile.jpg", content_type: "image/jpg")
+project.save
 puts '1 project created!'
 
 puts 'Creating invitations...'
@@ -53,11 +57,7 @@ users.each do |user|
 end
 puts "#{i} invitations created"
 
-# puts Rails.application.routes.url_helpers.image_path("memory2_photo.jpg")
-puts File.open(Rails.root.join('app/assets/images/img_seed/memory2_photo.jpg'))
-
 puts 'Creating memories...'
-
 n = 1
 users.each do |user|
   3.times do
@@ -69,5 +69,3 @@ users.each do |user|
   end
 end
 puts "#{Memory.count} memories created"
-
-puts 'Creating cards...'
