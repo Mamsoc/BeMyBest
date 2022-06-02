@@ -2,9 +2,11 @@ class CardsController < ApplicationController
 
   def index
     @cards = Card.all.select { |card| card.scenario == @project.scenario }
+    authorize @cards
   end
 
   def show
+    authorize @cards
   end
 
   private
