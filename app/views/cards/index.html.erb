@@ -1,6 +1,5 @@
-<h1 class = "d-none" > Mon jeu personnalisé  </h1>
-
-<div class = "cards">
+  <h1 class = "d-none" > Mon jeu personnalisé  </h1>
+  <div class = "cards">
   <% if @cards.any? %>
     <% @cards.each do |card| %>
       <div class = "card-category">
@@ -13,7 +12,7 @@
               <%= cl_image_tag card_memory.photo.key, class: "img-card d-block w-100"%>
               <%= link_to "Choisir un souvenir", project_card_path(@project, card) %>
             <div>
-            <%= card_memory.response %>
+              <%= card_memory.response %>
               <div>
                 <%= simple_form_for [@project, card_memory] do |f| %>
                 <%= f.input :response, label: "Réponse"%>
