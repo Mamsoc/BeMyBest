@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
   def update
     authorize @project
     if @project.update(projects_params)
-      redirect_to projects_path, notice: "Scenario choisi"
+      redirect_to project_cards_path(@project), notice: "Scenario choisi"
     else
       render :new, status: :unprocessable_entity
     end
