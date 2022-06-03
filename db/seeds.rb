@@ -61,7 +61,7 @@ puts 'Creating memories...'
 n = 1
 users.each do |user|
   3.times do
-    memory = Memory.new(legend: "légende #{n}", response: "a", user: user, project: project)
+    memory = Memory.new(legend: "légende #{n}", response: "a", user: user, project: project, card: card1)
     file = File.open(Rails.root.join("app/assets/images/img_seed/memory#{n}_photo.jpg"))
     memory.photo.attach(io: file, filename: "memory#{n}_photo.jpg", content_type: "image/jpg")
     memory.save
