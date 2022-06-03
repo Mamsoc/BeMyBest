@@ -1,15 +1,19 @@
-<h1> Jouons !</h1>
+<div class="container">
 
-<p><%= @card.title  %> </p>
-<p> <%= @card.question %></p>
+  <h1> Jouons !</h1>
 
-<div data-controller="hiddenbutton" data-hiddenbutton-response-value="<%=@memory.response%>">
+  <p><%= @card.title  %> </p>
+  <p> <%= @card.question %></p>
 
-  <% if @next_card == nil %>
-    <%=  link_to "finish",   project_win_path(@project), "data-hiddenbutton-target": "button"%>
-  <% else %>
-    <%=  link_to "Next question",  project_game_path(@project, @next_card), "data-hiddenbutton-target": "button"%>
-  <% end %>
-  <input type="text" data-hiddenbutton-target="input" data-action="keyup->hiddenbutton#responseTrue">
+  <div data-controller="hiddenbutton" data-hiddenbutton-response-value="<%=@memory.response%>">
+
+    <% if @next_card == nil %>
+      <%=  link_to "finish",   project_win_path(@project), "data-hiddenbutton-target": "button"%>
+    <% else %>
+      <%=  link_to "Next question",  project_game_path(@project, @next_card), "data-hiddenbutton-target": "button"%>
+    <% end %>
+    <input type="text" data-hiddenbutton-target="input" data-action="keyup->hiddenbutton#responseTrue">
+
+  </div>
 
 </div>

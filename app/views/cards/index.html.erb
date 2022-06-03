@@ -1,11 +1,13 @@
-<h1 class = "d-none" > Mon jeu personnalisé  </h1>
+<div class="container">
+  <h1 class = "d-none" > Mon jeu personnalisé  </h1>
 
-<div class = "cards">
-  <% @cards.each do |card| %>
-    <% if card.present? %>
-      <div class = "card-category">
-        <p>?</p>
-      </div>
-      <% end %>
-  <% end %>
+  <div class = "cards">
+    <% @cards.each do |card| %>
+      <% if card.present? %>
+        <div class = "card-category">
+          <p>?</p>
+        </div>
+        <% end %>
+    <% end %>
+  </div>
 </div>

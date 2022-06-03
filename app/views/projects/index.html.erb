@@ -1,27 +1,29 @@
-<h1> Bienvenue Antoine </h1>
+<div class="container">
+  <h1> Bienvenue Antoine </h1>
 
-<p> L’anniversaire de votre meilleur ami approche ?
-Offrez-lui une expérience unique avec Bemybest </p>
+  <p> L’anniversaire de votre meilleur ami approche ?
+  Offrez-lui une expérience unique avec Bemybest </p>
 
 
-<% if @current_user_projects.empty? %>
-  <%= link_to "Créer un jeu personnalisé !", new_project_path, class: "btn btn-flat w-100"%>
-<% else %>
-  <%= link_to "Créer un nouveau jeu personnalisé !", new_project_path, class: "btn btn-flat w-100 my-2"%>
-  <h2> Vos jeux crées</h2>
-  <div class="cards">
-  <% @current_user_projects.each do |project| %>
-    <div class="card-category d-block m-3">
-    <%= link_to project_path(project) do%>
-      <% if project.photo.attached? %>
-        <%= cl_image_tag project.photo.key, class: "img-card d-block w-100"%>
-      <% end %>
-      <div class="d-block">
-      <h2> <%= project.title %> </h2>
-      <p>  <%= project.description %></p>
-      </div>
-      <% end %>
-  </div>
+  <% if @current_user_projects.empty? %>
+    <%= link_to "Créer un jeu personnalisé !", new_project_path, class: "btn btn-flat w-100"%>
+  <% else %>
+    <%= link_to "Créer un nouveau jeu personnalisé !", new_project_path, class: "btn btn-flat w-100 my-2"%>
+    <h2> Vos jeux crées</h2>
+    <div class="cards">
+    <% @current_user_projects.each do |project| %>
+      <div class="card-category d-block m-3">
+      <%= link_to project_path(project) do%>
+        <% if project.photo.attached? %>
+          <%= cl_image_tag project.photo.key, class: "img-card d-block w-100"%>
+        <% end %>
+        <div class="d-block">
+        <h2> <%= project.title %> </h2>
+        <p>  <%= project.description %></p>
+        </div>
+        <% end %>
+    </div>
+    <% end %>
+    </div>
   <% end %>
-  </div>
-<% end %>
+</div>
