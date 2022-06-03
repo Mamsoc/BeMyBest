@@ -1,14 +1,18 @@
-<h1> Scenarios </h1>
-<div class="cards">
-  <%= form_with url: project_path(@project), method: :patch, html: { turbo: false} do |form|%>
-  <input type="hidden" name="_method" value="patch">
-    <% @scenarios.each do |scenario| %>
-        <label>
-          <input type="radio" name= "project[scenario_id]" value= "<%= scenario.id%>">
-            <%= image_tag scenario.img,  class:"img-card"%>
-        </label>
-        <br> <br>
-      <% end  %>
-  <button type="submit" class="btn btn-flat"> Click </button>
-<% end %>
+<div class="container">
+
+  <h1> Scenarios </h1>
+  <div class="cards">
+    <%= form_with url: project_path(@project), method: :patch, html: { turbo: false} do |form|%>
+    <input type="hidden" name="_method" value="patch">
+      <% @scenarios.each do |scenario| %>
+          <label>
+            <input type="radio" name= "project[scenario_id]" value= "<%= scenario.id%>">
+              <%= image_tag scenario.img,  class:"img-card"%>
+          </label>
+          <br> <br>
+        <% end  %>
+    <button type="submit" class="btn btn-flat"> Click </button>
+  <% end %>
+  </div>
+
 </div>

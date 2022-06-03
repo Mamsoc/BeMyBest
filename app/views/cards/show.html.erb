@@ -1,7 +1,7 @@
-<div class="container">
-<h1> Mes souvenirs partagés :  </h1>
 
-<%= link_to "Ajouter un souvenir", new_project_memory_path(@project), :class => 'btn btn-flat' %>
+<h1> Souvenirs disponibles  </h1>
+
+<p><%= @card.question %></p>
  <div class="cards">
 <% @memories.each do |memory| %>
   <% if memory.present? %>
@@ -10,8 +10,13 @@
     <div>
       <p><%=  memory.legend %> </p>
     </div>
+    <div>
+    <%= simple_form_for [@project, memory] do |f| %>
+      <%= f.hidden_field :card_id, value: @card.id %>
+      <%= f.submit class: "btn btn-flat" %>
+    </div>
+    <% end %>
   <% end %>
   </div>
 <% end %>
-</div>
 </div>

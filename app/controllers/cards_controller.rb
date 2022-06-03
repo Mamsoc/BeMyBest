@@ -1,12 +1,14 @@
 class CardsController < ApplicationController
+  before_action :set_project, :set_memories
 
   def index
-    @cards = Card.all.select { |card| card.scenario == @project.scenario }
-    authorize @cards
+    @cards = policy_scope(Card)
+    @cards = @cards.where(scenario: @project.scenario)
   end
 
   def show
-    authorize @cards
+    @card = Card.find(params[:id])
+    authorize @card
   end
 
   private
@@ -15,8 +17,12 @@ class CardsController < ApplicationController
     params.require(:project).permit(:scenario_id)
   end
 
+  def set_memories
+    @memories = policy_scope(@project.memories)
+  end
+
   def set_project
-    @project = Project.find(params[:id])
+    @project = Project.find(params[:project_id])
     authorize @project
   end
 end

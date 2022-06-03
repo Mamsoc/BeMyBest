@@ -15,6 +15,7 @@ class GamesController < ApplicationController
     @card = Card.find(params[:id])
     @cards = @project.scenario.cards
     @next_card = @cards[@cards.index(@card) + 1]
+    @memory = @card.memories.where(project_id: @project).first
   end
 
 end
