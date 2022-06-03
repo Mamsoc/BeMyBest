@@ -19,3 +19,13 @@
   margin: 0 auto;
   width: 200px;
 }
+
+.congrats-centered{
+  min-height: calc(100vh - 80px - 80px);
+  display: flex;
+  align-items: center;
+  .congrats_gif{
+    height: 40%;
+    width: 100vw;
+  }
+}
