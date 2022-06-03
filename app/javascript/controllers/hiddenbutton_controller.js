@@ -18,11 +18,9 @@ export default class extends Controller {
     console.log(this.responseValue)
     if (response != this.responseValue) {
       // .value pour convertir input en string
-      this.buttonTarget.disabled = true
-      this.buttonTarget.hidden = true
+      this.buttonTarget.style.display = "none"
     } else {
-      this.buttonTarget.disabled = false
-      this.buttonTarget.hidden = false
+      this.buttonTarget.style.display  = "block"
     }
   }
 
