@@ -1,0 +1,21 @@
+.index_btn{
+  display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    background-color: $subTitle_button_picto;
+    border: $title_logo 5px solid;
+}
+.a_btn{
+  padding-top: 55px;
+  text-decoration: none;
+  font-family: $h1-font;
+  font-size: 50px;
+  color: $title_logo;
+}
+.center_btn{
+  padding-top: 170px;
+  margin: 0 auto;
+  width: 200px;
+}
