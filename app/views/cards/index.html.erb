@@ -1,24 +1,26 @@
-  <h1 class = "d-none" > Mon jeu personnalisé  </h1>
-  <div class = "cards">
-  <% if @cards.any? %>
+<h1 class = "d-none" > Mon jeu personnalisé  </h1>
+<% if @cards.any? %>
+  <div class = "game-cards">
     <% @cards.each do |card| %>
-      <div class = "card-category">
+      <div class = "card-category-game">
         <% card_memory = @memories.find_by(card: card) %>
-        <p>?</p>
-        <%= card.question %>
+        <div>
+          <p>Question ?</p>
+          <%= card.question %>
+        </div>
         <% if card_memory %>
-          <div>
-            <div class="card-category d-block m-3">
-              <%= cl_image_tag card_memory.photo.key, class: "img-card d-block w-100"%>
-              <%= link_to "Choisir un souvenir", project_card_path(@project, card) %>
-            <div>
-              <%= card_memory.response %>
-              <div>
-                <%= simple_form_for [@project, card_memory] do |f| %>
-                <%= f.input :response, label: "Réponse"%>
-                <%= f.submit class: "btn btn-flat" %>
-                <% end %>
-              </div>
+          <div class="card-image">
+            <%= cl_image_tag card_memory.photo.key, class: "img-card d-block w-100"%>
+            <%= link_to "Choisir un souvenir", project_card_path(@project, card) %>
+          </div>
+          <div class="card-response">
+            <%= card_memory.response %>
+          </div>
+          <div class="card-form">
+            <%= simple_form_for [@project, card_memory] do |f| %>
+              <%= f.input :response, label: "Saisir la réponse"%>
+              <%= f.submit class: "btn btn-flat" %>
+            <% end %>
           </div>
         <% else %>
           <p>Affecter la carte</p>
@@ -26,10 +28,10 @@
         <% end %>
       </div>
     <% end %>
-    <% else %>
-    <p>Le scenario est vide</p>
-  <% end %>
-</div>
+  </div>
+<% else %>
+  <p>Le scenario est vide</p>
+<% end %>
 
 
 <%= link_to "Simuler le jeu",  project_games_path(@project), class: "btn btn-flat" %>
