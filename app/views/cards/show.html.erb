@@ -1,0 +1,22 @@
+
+<h1> Souvenirs disponibles  </h1>
+
+<p><%= @card.question %></p>
+ <div class="cards">
+<% @memories.each do |memory| %>
+  <% if memory.present? %>
+   <div class="card-category d-block m-3">
+    <%= cl_image_tag memory.photo.key, class: "img-card d-block w-100"%>
+    <div>
+      <p><%=  memory.legend %> </p>
+    </div>
+    <div>
+    <%= simple_form_for [@project, memory] do |f| %>
+      <%= f.hidden_field :card_id, value: @card.id %>
+      <%= f.submit class: "btn btn-flat" %>
+    </div>
+    <% end %>
+  <% end %>
+  </div>
+<% end %>
+</div>
