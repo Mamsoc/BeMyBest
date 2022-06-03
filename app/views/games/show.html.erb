@@ -1,0 +1,14 @@
+<h1> Jouons !</h1>
+
+<p><%= @card.title  %> </p>
+<p> <%= @card.question %></p>
+
+
+<% if @next_card == nil %>
+  <%=  link_to "finish",   project_win_path(@project) %>
+<% else %>
+  <%=  link_to "Next question",  project_game_path(@project, @next_card) %>
+<% end %>
+
+<%# input + autour de ce input et du lien controleur stimulus, passer la reponse de la card
+et la comparer avec input (keyup) et voir desactiver le bouton (changer la classe) %>
