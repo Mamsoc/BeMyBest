@@ -22,7 +22,7 @@
           </div>
         <% else %>
           <p>Affecter la carte</p>
-          <%= link_to "Choisir un souvenir", project_card_path(@project, card) %>
+          <%= link_to "Choisir un souvenir", project_card_path(@project, card), class: "btn btn-flat"%>
         <% end %>
       </div>
     <% end %>
@@ -30,3 +30,6 @@
     <p>Le scenario est vide</p>
   <% end %>
 </div>
+
+
+<%= link_to "Simuler le jeu",  project_games_path(@project), class: "btn btn-flat" %>
