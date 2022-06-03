@@ -10,6 +10,12 @@
     <div>
       <p><%=  memory.legend %> </p>
     </div>
+    <div>
+    <%= simple_form_for [@project, memory] do |f| %>
+      <%= f.hidden_field :card_id, value: @card.id %>
+      <%= f.submit class: "btn btn-flat" %>
+    </div>
+    <% end %>
   <% end %>
   </div>
 <% end %>

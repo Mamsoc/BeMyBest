@@ -17,7 +17,7 @@ class MemoriesController < ApplicationController
   def update
     authorize @memory
     @memory.update(memories_params)
-    redirect_to edit_project_memory_path(@memory)
+    redirect_to project_cards_path(@project)
   end
 
   def new
@@ -47,7 +47,7 @@ class MemoriesController < ApplicationController
   private
 
   def memories_params
-    params.require(:memory).permit(:legend, :response, :photo)
+    params.require(:memory).permit(:legend, :card_id, :response, :photo)
 
   end
 
