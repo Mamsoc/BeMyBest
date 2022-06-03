@@ -1,15 +1,13 @@
 // Specific CSS for your home-page
 .home-banner {
-  background-image: asset-url("img_home.png");
-  background-color: rgb(14, 12, 12);
+  background-image: asset-url("home_visuel.png");
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 82.5vh;
   color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
-  padding-top: 70px;
 }
 .banner-h1{
   margin-top: 170px;
@@ -18,8 +16,8 @@
 padding: 25px;
 }
 .banner-btn{
-  background: orange;
-  color: black;
+  background: $subTitle_button_picto;
+  color: $content;
   text-decoration: none;
   border-radius: 5px;
 }

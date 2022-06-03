@@ -12,3 +12,27 @@
   color: $content;
   opacity: 1;
 }
+
+.btn-home {
+  display: inline-block;
+  color: $subTitle_button_picto;
+  border: 3px double white;
+  padding: 10px 7px;
+  font-family: $h1-font;
+  font-size: 25px;
+  border-radius: 4px;
+  align-content: center;
+  background: black;
+  width: 200px;
+  text-decoration: none;
+  margin-left: 48%;
+  margin-top: 619px;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px $subTitle_button_picto;
+}
+
+.btn-home:hover {
+  background: $subTitle_button_picto;
+  color: $content;
+  opacity: 0.7;
+}
