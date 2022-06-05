@@ -36,3 +36,20 @@
   color: $content;
   opacity: 0.7;
 }
+
+
+.btn-game {
+  display: none;
+  color: $content;
+  padding: 8px 24px;
+  font-family: $p-font;
+  border-radius: 4px;
+  background: $subTitle_button_picto;
+  opacity: 0.8;
+}
+
+.btn-game:hover {
+  background: $subTitle_button_picto;
+  color: $content;
+  opacity: 1;
+}

@@ -6,12 +6,27 @@
     display:block;
   }
 
+  .game-cards {
+    align-items: center;
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    display:block;
+    margin: 20px;
+  }
+
   .card-category {
     margin-bottom: 22px;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 7px;
     max-height: 300px;
+  }
+
+  .card-category-game{
+    margin-bottom: 22px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 7px;
+    padding: 10px;
   }
 
   .card-category > a {
@@ -21,6 +36,7 @@
   .img-card {
     max-width: 320px;
     object-fit: cover;
+    max-height: 200px;
   }
 
 

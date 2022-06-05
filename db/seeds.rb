@@ -20,9 +20,9 @@ p "destroy scenarios"
 Scenario.destroy_all
 
 puts 'Creating scenarios...'
-scenario1 = Scenario.create(title: "Anniversaire", img: "anniversaire.jpg")
-scenario2 = Scenario.create(title: "EVJF", img: "evjf.jpg")
-scenario3 = Scenario.create(title: "mariages", img: "mariages.jpg")
+scenario1 = Scenario.create!(title: "Anniversaire", img: "anniversaire.jpg")
+scenario2 = Scenario.create!(title: "EVJF", img: "evjf.jpg")
+scenario3 = Scenario.create!(title: "mariages", img: "mariages.jpg")
 puts '3 scenarios created!'
 
 puts 'Creating cards...'
@@ -32,7 +32,7 @@ card3= Card.create(title: "passion", question: "quelle est ta passion", scenario
 puts '3 cards created!'
 
 puts 'Creating users...'
-user1 = User.create(email: "anthoine@example.com", password: "anthoine@example.com")
+user1 = User.create(email: "antoine@example.com", password: "antoine@example.com")
 user2 = User.create(email: "elodie@example.com", password: "elodie@example.com")
 user3 = User.create(email: "manu@example.com", password: "manu@example.com")
 user4 = User.create(email: "lidwine@example.com", password: "lidwine@example.com")
@@ -41,7 +41,7 @@ users = User.all
 puts '5 users created!'
 
 puts 'Creating projects...'
-project = Project.create(title: "Anniversaire de Lucile", description: "yeay c'est l'anniv de Lucile preparons-lui une surprise", user: user1, scenario_id: scenario1)
+project = Project.create(title: "Anniversaire de Lucile", description: "yeay c'est l'anniv de Lucile preparons-lui une surprise", user: user1, scenario: scenario1)
 img_project = File.open(Rails.root.join("app/assets/images/img_seed/Lucile.jpg"))
 project.photo.attach(io: img_project, filename: "Lucile.jpg", content_type: "image/jpg")
 project.save
@@ -61,7 +61,7 @@ puts 'Creating memories...'
 n = 1
 users.each do |user|
   3.times do
-    memory = Memory.new(legend: "légende #{n}", response: "a", user: user, project: project)
+    memory = Memory.new(legend: "légende #{n}", response: "a", user: user, project: project, card: card1)
     file = File.open(Rails.root.join("app/assets/images/img_seed/memory#{n}_photo.jpg"))
     memory.photo.attach(io: file, filename: "memory#{n}_photo.jpg", content_type: "image/jpg")
     memory.save

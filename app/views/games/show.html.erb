@@ -1,14 +1,24 @@
-<h1> Jouons !</h1>
+<div class="container">
 
-<p><%= @card.title  %> </p>
-<p> <%= @card.question %></p>
+  <h1> Jouons !</h1>
+<div class="cards">
+  <div class="card-category">
+    <p><%= @card.title  %> </p>
+    <p> <%= @card.question %></p>
+    <%= cl_image_tag @memory.photo.key, class: "img-card d-block w-100"%>
+    </div>
+</div>
 
+  <div data-controller="hiddenbutton" data-hiddenbutton-response-value="<%=@memory.response%>">
 
-<% if @next_card == nil %>
-  <%=  link_to "finish",   project_win_path(@project) %>
-<% else %>
-  <%=  link_to "Next question",  project_game_path(@project, @next_card) %>
-<% end %>
+    <input type="text" data-hiddenbutton-target="input" data-action="keyup->hiddenbutton#responseTrue" class="w-100">
+    <p> <br></p>
+    <% if @next_card == nil %>
+      <%=  link_to "finish",   project_win_path(@project), "data-hiddenbutton-target": "button", class: "btn-game w-100"%>
+    <% else %>
+      <%=  link_to "Next question",  project_game_path(@project, @next_card), "data-hiddenbutton-target": "button", class: "btn-game w-100"%>
+    <% end %>
 
-<%# input + autour de ce input et du lien controleur stimulus, passer la reponse de la card
-et la comparer avec input (keyup) et voir desactiver le bouton (changer la classe) %>
+  </div>
+
+</div>
