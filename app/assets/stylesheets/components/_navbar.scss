@@ -3,6 +3,7 @@
   background: white;
   height: 80px;
   border-bottom: solid;
+  flex-wrap: nowrap;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -10,12 +11,31 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 50%;
+  width: 80%;
 }
 
 .navbar-brand {
-  text-align: center;
-  margin-left: 1rem;
+  justify-content: space-between;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1rem;
+  clear: both;
+  font-weight: 400;
+  color: $content;
+  text-align: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  border: 0;
+  font-size: 14px;
+  font-family: $p-font;
+}
+
+.dropdown-item :hover {
+  background-color: white;
+
 }
 
 .main-menu-bottom {
@@ -52,8 +72,4 @@
 .main-menu-bottom-links a:hover {
   opacity: 1;
   color: $title_logo;
-}
-
-.avatar-connected {
-background-image: url(clef.jpg);
 }
