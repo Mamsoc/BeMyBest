@@ -39,7 +39,21 @@
     max-height: 200px;
   }
 
+// Show page project
+  .image_button{
+    position: relative;
+  }
+  .background-show {
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+    width: 100%;
+    padding: 10px;
+  }
 
-
+  .background-show > .btn-flat {
+    opacity: 1;
+  }
 
 }
