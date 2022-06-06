@@ -10,7 +10,19 @@
    <%= link_to "personnaliser le jeu ", edit_project_path(@project), class: "btn btn-flat w-75"%> </p> <br>
   <p class="p"> Tout est prêt ? vous pouvez personnalisé votre jeu ! Partagez ce lien a vos amis pour qu'ils contribuent au projet :</p>
   <div class="icon-link-project">
-    <a href="https://wa.me/?text=click%20sur%20ce%20lien%20pour%20participer%20https://example.com/invitations/<%= @project.code %>"><i class="fa-brands fa-whatsapp fa-sm"></i></a>
-    <a href="mailto:?subject=Participes au cadeau BeMyBest&body=click%20sur%20ce%20lien%20pour%20participer%20https://example.com/invitations/<%= @project.code %>"><i class="fa-solid fa-envelope fa-xs"></i></a>
+  <a href="https://wa.me/?text=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/memories/new"><i class="fa-brands fa-whatsapp"></i></a>
+  <a href="mailto:?subject=Participes au cadeau BMyBest&body=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/memories/new"><i class="fa-solid fa-envelope"></i></a>
   </div>
+  <br>
+  <%= link_to "Ajoutez des photos", new_project_memory_path(@project), class: "btn btn-flat w-100"%>
+
+
+  <%= link_to "Voir toutes les photos", project_memories_path(@project), class: "btn btn-flat w-100 my-3"%>
+
+
+  <p> Tout est prêt ? vous pouvez personnalisé votre jeu ! </p>
+
+
+
+  <%= link_to "personalise votre jeu !", edit_project_path(@project), class: "btn btn-flat w-100 my-3"%>
 </div>

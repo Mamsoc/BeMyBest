@@ -41,6 +41,11 @@ class ProjectsController < ApplicationController
     authorize @project
   end
 
+  def thanks
+    @project = Project.find(params[:project_id])
+    authorize @project
+  end
+  
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
