@@ -2,7 +2,11 @@ class MemoriesController < ApplicationController
   before_action :set_project
   before_action :set_memory, except: [:create, :new, :index]
   def index
-    @memories = policy_scope(@project.memories)
+    if current_user == @project.user
+      @memories = policy_scope(@project.memories)
+    else
+      @memories = policy_scope(@project.memories.where(user: current_user))
+    end
   end
 
   def show

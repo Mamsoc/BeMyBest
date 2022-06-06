@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     resources :cards, only: [:index, :show]
     resources :games, only: [:index, :show]
     get :win
+    get :thanks
   end
-  resources :invitations, only: :show
 end
