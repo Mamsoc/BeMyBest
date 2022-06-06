@@ -33,4 +33,8 @@ class ProjectPolicy < ApplicationPolicy
   def win?
     true
   end
+
+  def destroy?
+    true
+  end
 end
