@@ -19,11 +19,9 @@
             <%= cl_image_tag card_memory.photo.key, class: "img-card d-block w-100"%>
             <%= link_to "Choisir un souvenir", project_card_path(@project, card) %>
           </div>
-
           <div class="card-response">
             <%= card_memory.response %>
           </div>
-
           <div class="card-form">
             <%= simple_form_for [@project, card_memory], html: {"data-turbo": false} do |f| %>
               <%= f.input :response, label: "Saisir la réponse"%>
@@ -32,8 +30,10 @@
           </div>
 
         <% else %>
+
           <p>Affecter la carte</p>
           <%= link_to "Choisir un souvenir", project_card_path(@project, card), class: "btn btn-flat"%>
+
         <% end %>
 
       </div>
