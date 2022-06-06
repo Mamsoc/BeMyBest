@@ -52,6 +52,19 @@ input#project_photo {
   border-right: none;
 }
 
+input#memory_photo::file-selector-button {
+  background-color: $subTitle_button_picto;
+  color: $content;
+  opacity: 0.8;
+  border:none;
+}
+
+input#memory_photo {
+  border-bottom: 2px solid $subTitle_button_picto;
+  border-top: none;
+  border-right: none;
+}
+
 .final-button {
   margin-right: 40px;
 }

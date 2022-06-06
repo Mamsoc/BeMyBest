@@ -3,12 +3,12 @@
 <p> <br></p>
 
   <%= simple_form_for(project) do |f| %>
-    <%= f.input :title, label: "Titre du projet",  input_html: { class: 'input-field' } %>
+    <%= f.input :title, label: "Titre du projet : ",  input_html: { class: 'input-field' } %>
     <p> <br></p>
-    <%= f.input :description, label: "Description du projet", input_html: { class: 'input-field' }  %>
+    <%= f.input :description, label: "Description du projet : ", input_html: { class: 'input-field' }  %>
     <p> <br></p>
-    <%= f.input :photo, as: :file, input_html: { class: 'fileinput-button ' } %>
+    <%= f.input :photo, as: :file, label: "Vos photos :", input_html: { class: 'fileinput-button ' } %>
     <p> <br></p>
-    <%= f.submit class: "mx-5 px-5 my-4 btn btn-flat ",  value: "Créer votre projet"%>
+    <%= f.submit class: "w-100 btn btn-flat ",  value: "Créer votre projet"%>
   <% end %>
 </div>
