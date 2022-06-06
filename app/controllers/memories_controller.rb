@@ -6,7 +6,7 @@ class MemoriesController < ApplicationController
   end
 
   def show
-    @memories = Memory.all
+    @memories = @project.memories
     authorize @memories
   end
 
@@ -16,8 +16,13 @@ class MemoriesController < ApplicationController
 
   def update
     authorize @memory
+    @memories = @project.memories
+    # chercher les memories qui ont la meme card_id
+    same_card_memories = @memories.where(card_id: memories_params[:card_id])
+    # vider le card_id
+    same_card_memories.update_all(card_id: nil)
     @memory.update(memories_params)
-    redirect_to project_cards_path(@project)
+    redirect_to project_cards_path(@project, anchor: "card_#{@memory.card_id}")
   end
 
   def new
