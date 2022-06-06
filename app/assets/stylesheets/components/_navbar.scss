@@ -43,7 +43,7 @@
   bottom: 0;
   height: 61px;
   margin: 0;
-  background: linear-gradient(180deg, $content 0%,#fff 100%);
+  background: $light-gray;
   opacity: 1;
   width: 100%;
   z-index: 1000;
@@ -63,7 +63,7 @@
   padding-top: 10px;
 }
 .main-menu-bottom-links a {
-  color: $subTitle_button_picto;
+  color: $title_logo;
   opacity: 0.80;
   text-decoration: none;
   font-size: 30px;

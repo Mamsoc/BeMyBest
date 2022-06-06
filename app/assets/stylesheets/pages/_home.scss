@@ -1,4 +1,10 @@
-// Specific CSS for your home-page
+@media (max-width: 540px) {
+  /* Pour un écran < 540px, cette classe CSS s'applique */
+  .home-banner {
+    width: 390px;
+  }
+}
+
 .home-banner {
   background-image: asset-url("home_visuel.png");
   background-size: cover;
