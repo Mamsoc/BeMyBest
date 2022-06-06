@@ -5,7 +5,7 @@
   <%= simple_form_for(project) do |f| %>
     <%= f.input :title, label: "Titre du projet : ",  input_html: { class: 'input-field' } %>
     <p> <br></p>
-    <%= f.input :description, label: "Description du projet : ", label_html: { class: 'p' }, input_html: { class: 'input-field' }  %>
+    <%= f.input :description, label: "Description du projet : ", input_html: { class: 'input-field' }  %>
     <p> <br></p>
     <%= f.input :photo, as: :file, label: "Vos photos :", input_html: { class: 'fileinput-button ' } %>
     <p> <br></p>
