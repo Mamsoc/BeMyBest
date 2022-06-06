@@ -41,6 +41,12 @@ class ProjectsController < ApplicationController
     authorize @project
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+    redirect_to projects_path, status: :see_other
+  end
+
   private
 
 

@@ -56,4 +56,23 @@
     opacity: 1;
   }
 
+
+  // CSS cartes de l'index project
+  .card-project-relative {
+    position: relative;
+  }
+
+  .card-project-trash {
+    color: $title_logo;
+    position: absolute;
+    margin-left: 282px;
+    margin-top: -24px;
+    opacity: 0.6;
+  }
+
+  .card-description-p {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
 }
