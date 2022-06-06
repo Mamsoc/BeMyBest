@@ -6,12 +6,27 @@
     display:block;
   }
 
+  .game-cards {
+    align-items: center;
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    display:block;
+    margin: 20px;
+  }
+
   .card-category {
     margin-bottom: 22px;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 7px;
+    border-radius: 2px;
     max-height: 300px;
+  }
+
+  .card-category-game{
+    margin-bottom: 22px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 7px;
+    padding: 10px;
   }
 
   .card-category > a {
@@ -24,7 +39,40 @@
     max-height: 200px;
   }
 
+// Show page project
+  .image_button{
+    position: relative;
+  }
+  .background-show {
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .background-show > .btn-flat {
+    opacity: 1;
+  }
 
 
+  // CSS cartes de l'index project
+  .card-project-relative {
+    position: relative;
+  }
+
+  .card-project-trash {
+    color: $title_logo;
+    position: absolute;
+    margin-left: 282px;
+    margin-top: -24px;
+    opacity: 0.6;
+  }
+
+  .card-description-p {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
 
 }

@@ -32,7 +32,7 @@ card3= Card.create(title: "passion", question: "quelle est ta passion", scenario
 puts '3 cards created!'
 
 puts 'Creating users...'
-user1 = User.create(email: "anthoine@example.com", password: "anthoine@example.com")
+user1 = User.create(email: "antoine@example.com", password: "antoine@example.com")
 user2 = User.create(email: "elodie@example.com", password: "elodie@example.com")
 user3 = User.create(email: "manu@example.com", password: "manu@example.com")
 user4 = User.create(email: "lidwine@example.com", password: "lidwine@example.com")
@@ -61,7 +61,7 @@ puts 'Creating memories...'
 n = 1
 users.each do |user|
   3.times do
-    memory = Memory.new(legend: "légende #{n}", response: "a", user: user, project: project, card: card1)
+    memory = Memory.new(legend: "légende #{n}", response: "a", user: user, project: project)
     file = File.open(Rails.root.join("app/assets/images/img_seed/memory#{n}_photo.jpg"))
     memory.photo.attach(io: file, filename: "memory#{n}_photo.jpg", content_type: "image/jpg")
     memory.save

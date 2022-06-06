@@ -1,12 +1,10 @@
-<div class="container">
- <% if current_user == @project.user %>
+<div class="container my-2">
+  <% if current_user == @project.user %>
     <h1 class="h1">Ajouter un nouveau souvenir ! </h1>
   <% else %>
     <h1 class="h1">Ajouter un nouveau souvenir !</h1>
     <p class="p">Attention vous êtes limité à 3 souvenirs! choisissez bien !</p>
   <% end %>
-
-
   <%= render "form", memory: @memory %>
   <%= link_to "Retour", project_memories_path(@project), :class => 'btn btn-flat' %>
- </div>
+</div>

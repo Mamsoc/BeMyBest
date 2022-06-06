@@ -37,4 +37,8 @@ class ProjectPolicy < ApplicationPolicy
   def thanks?
     true
   end
+  
+  def destroy?
+    true
+  end
 end

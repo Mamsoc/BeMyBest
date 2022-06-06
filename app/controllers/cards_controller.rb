@@ -8,6 +8,9 @@ class CardsController < ApplicationController
 
   def show
     @card = Card.find(params[:id])
+    @available_memories = @memories.where(card_id: nil)
+    @used_memories = @memories.where.not(card_id: nil)
+    @card_memory = @memories.find_by(card: @card)
     authorize @card
   end
 

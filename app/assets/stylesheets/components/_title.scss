@@ -1,7 +1,7 @@
 .h1 {
   color: $title_logo;
   font-family: $h1-font;
-  font-size: 48px;
+  font-size: 30px;
   letter-spacing: 2px;
   font-weight: bold;
 }
@@ -46,7 +46,13 @@
 .p {
   color: $content;
   font-family: $p-font;
-  font-size: 10px;
+  font-size: 12.5px;
   letter-spacing: 1px;
   font-weight: 100;
+}
+
+.title-jeux {
+  margin-top: 50px;
+  margin-left: 15px;
+  margin-bottom: 30px;
 }
