@@ -1,8 +1,10 @@
 <div class="container my-2">
-
-  <h1 class="$h1-font">Bonjour à tous et toutes!</h1>
-
-  <p class="$body-font"> J'ai besoin de votre aide pour réunir des souvenirs </p>
-
+  <% if current_user == @project.user %>
+    <h1 class="h1">Ajouter un nouveau souvenir ! </h1>
+  <% else %>
+    <h1 class="h1">Ajouter un nouveau souvenir !</h1>
+    <p class="p">Attention vous êtes limité à 3 souvenirs! choisissez bien !</p>
+  <% end %>
   <%= render "form", memory: @memory %>
- </div>
+  <%= link_to "Retour", project_memories_path(@project), :class => 'btn btn-flat' %>
+</div>
