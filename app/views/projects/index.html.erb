@@ -8,8 +8,8 @@
     <%= link_to "Démarre ton 1er jeu !", new_project_path, class: "btn btn-flat w-100"%>
   <% else %>
     <%= link_to "Démarre un nouveau jeu !", new_project_path, class: "btn btn-flat w-100 my-2"%>
-    <div class="mt-5">
-      <h2 class="h2"> Tous tes jeux créés</h2>
+    <div class="title-jeux">
+      <h2 class="h2"> <i class="fa-solid fa-puzzle-piece"></i> Tes jeux déjà créés : </h2>
     </div>
     <div class="cards">
       <% @current_user_projects.each do |project| %>
