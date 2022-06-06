@@ -39,6 +39,24 @@
     max-height: 200px;
   }
 
+// Show page project
+  .image_button{
+    position: relative;
+  }
+  .background-show {
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .background-show > .btn-flat {
+    opacity: 1;
+  }
+
+
   // CSS cartes de l'index project
   .card-project-relative {
     position: relative;
@@ -56,4 +74,5 @@
     margin-top: 10px;
     margin-left: 10px;
   }
+
 }

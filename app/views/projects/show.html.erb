@@ -1,24 +1,16 @@
-<div class="container">
-<h1> Votre projet </h1>
-  <br>
-  <p>Partagez ce lien a vos amis pour qu'ils contribuent au projet :</p>
-  <div class="icon-link-project">
-  <a href="https://wa.me/?text=click%20sur%20ce%20lien%20pour%20participer%20https://example.com/invitations/<%= @project.code %>"><i class="fa-brands fa-whatsapp"></i></a>
-  <a href="mailto:?subject=Participes au cadeau BeMyBest&body=click%20sur%20ce%20lien%20pour%20participer%20https://example.com/invitations/<%= @project.code %>"><i class="fa-solid fa-envelope"></i></a>
+<div class="container d-block my-2">
+  <h1 class="h1" > <%=  @project.title %> </h1>
+  <div class="image_button">
+    <p class="p"> <%= cl_image_tag @project.photo.key, class: "w-100"%> </p>
+    <div class="background-show">
+      <p class="p"><%= link_to "Accéder aux photos ", project_memories_path(@project), class: "btn btn-flat w-75 my-3"%> </p>
+    </div>
   </div>
   <br>
-
-
-
-  <%= link_to "Ajoutez des photos", new_project_memory_path(@project), class: "btn btn-flat w-100"%>
-
-
-  <%= link_to "Voir toutes les photos", project_memories_path(@project), class: "btn btn-flat w-100 my-3"%>
-
-
-  <p> Tout est prêt ? vous pouvez personnalisé votre jeu ! </p>
-
-
-
-  <%= link_to "personalise votre jeu !", edit_project_path(@project), class: "btn btn-flat w-100 my-3"%>
+   <%= link_to "personnaliser le jeu ", edit_project_path(@project), class: "btn btn-flat w-75"%> </p> <br>
+  <p class="p"> Tout est prêt ? vous pouvez personnalisé votre jeu ! Partagez ce lien a vos amis pour qu'ils contribuent au projet :</p>
+  <div class="icon-link-project">
+    <a href="https://wa.me/?text=click%20sur%20ce%20lien%20pour%20participer%20https://example.com/invitations/<%= @project.code %>"><i class="fa-brands fa-whatsapp fa-sm"></i></a>
+    <a href="mailto:?subject=Participes au cadeau BeMyBest&body=click%20sur%20ce%20lien%20pour%20participer%20https://example.com/invitations/<%= @project.code %>"><i class="fa-solid fa-envelope fa-xs"></i></a>
+  </div>
 </div>
