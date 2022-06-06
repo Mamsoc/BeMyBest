@@ -8,7 +8,7 @@
       <%= link_to @current_user.first_name, destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
       <% else %>
         <%= link_to new_user_session_path do %>
-        <i class="fa-solid fa-power-off"></i>
+        <i class="fa-solid fa-power-off button-navbar"></i>
         <% end %>
       <% end %>
   </div>
