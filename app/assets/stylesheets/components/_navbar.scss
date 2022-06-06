@@ -4,6 +4,7 @@
   height: 80px;
   border-bottom: solid;
   flex-wrap: nowrap;
+  margin: 5px;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -11,7 +12,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 80%;
+  width: 60%;
 }
 
 .navbar-brand {
@@ -64,7 +65,6 @@
 }
 .main-menu-bottom-links a {
   color: $title_logo;
-  opacity: 0.80;
   text-decoration: none;
   font-size: 30px;
   padding: 0px 25px;
@@ -75,4 +75,11 @@
 }
 
 .button-navbar {
+  font-size: 20px;
+  color: $title_logo;
+  margin-right: 10px;
+}
+
+.button-navbar :hover {
+  color: $subTitle_button_picto
 }
