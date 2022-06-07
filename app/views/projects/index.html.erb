@@ -1,26 +1,26 @@
-<style>
+<%# <style>
 body {
   background-color: #F9F9F9;
 }
 p, h1, h2, a{
   color: #2F3984;
 }
-</style>
+</style> %>
 
 
-<div class="container mt-3">
-  <h1 class="mb-2"> Bienvenue <%= @current_user.first_name %> 👋 </h1>
+<div class="container mt-5">
+  <h1 class="bienvenue"> Bienvenue <%= @current_user.first_name %> 👋 </h1>
 
-  <p> Un de tes amis fête bientôt son anniversaire ?
+  <p class="h2 mt-4 mb-4"> Un de tes amis fête bientôt son anniversaire ? <br>
   Offre-lui une expérience unique avec BE MY BEST ! </p>
 
 
   <% if @current_user_projects.empty? %>
-    <p><%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100"%></p>
+    <p class="p"><%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100"%></p>
   <% else %>
     <%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100 my-2"%>
     <div class="my-4">
-      <h2 class= " m-3"> <i class="fa-solid fa-puzzle-piece"></i> Mes jeux : </h2>
+      <h2 class= "m-3 h1"> <i class="fa-solid fa-puzzle-piece"></i> Mes jeux : </h2>
     </div>
     <div class="cards">
       <% @current_user_projects.each do |project| %>
@@ -32,8 +32,8 @@ p, h1, h2, a{
                 <i class="fa-solid fa-trash card-project-trash"></i>
             <% end %>
             <div class="card-project-relative card-description-p">
-              <h2> <%= project.title %> </h2>
-              <p>  <%= project.description.length > 25 ? "#{project.description.first(25)}..." : project.description %></p>
+              <h2 class="h2"> <%= project.title %> </h2>
+              <p class="p">  <%= project.description.length > 25 ? "#{project.description.first(25)}..." : project.description %></p>
             </div>
           <% end %>
 

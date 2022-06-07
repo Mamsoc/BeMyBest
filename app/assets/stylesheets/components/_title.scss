@@ -1,55 +1,65 @@
+.bienvenue {
+  color: $title_logo;
+  font-family: $h1-font;
+  font-size: 22;
+  font-weight: bold;
+}
+
 .h1 {
   color: $title_logo;
   font-family: $h1-font;
-  font-size: 30px;
-  letter-spacing: 2px;
+  font-size: 22px;
   font-weight: bold;
 }
 
 .h2 {
-  color: $subTitle_button_picto;
+  color: $title_logo;
   font-family: $h2-font;
-  font-size: 15px;
+  font-size: 18px;
+  text-align: justify;
   font-weight: bold;
-  letter-spacing: 3px;
-  text-transform: uppercase;
 }
 
 .h3 {
-  color: $subTitle_button_picto;
+  color: $title_logo;
   font-family: $h3-font;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .h4 {
-  color: $subTitle_button_picto;
+  color: $title_logo;
   font-family: $h3-font;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: bolder;
 }
 
 .h5 {
-  color: $content;
-  font-family: $h6-font;
-  font-size: 10px;
-  letter-spacing: 1px;
-  font-weight: 100;
+  color: $title_logo;
+  font-family: $h3-font;
+  font-size: 12px;
+  font-weight: bolder;
 }
 
 .h6 {
-  color: $content;
-  font-family: $h6-font;
-  font-size: 8px;
-  letter-spacing: 1px;
-  font-weight: 100;
+  color: $title_logo;
+  font-family: $h3-font;
+  font-size: 10px;
+  font-weight: bolder;
 }
 
 .p {
   color: $content;
   font-family: $p-font;
-  font-size: 12.5px;
-  letter-spacing: 1px;
-  font-weight: 100;
+  font-size: 16px;
 }
+
+.p2 {
+  color: $content2;
+  font-family: $p-font;
+  font-size: 14px;
+}
+
 
 .title-jeux {
   margin-top: 50px;
