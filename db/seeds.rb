@@ -30,8 +30,8 @@ card1= Card.create(title: "parents", question: "En quelle année se sont rencont
 card2= Card.create(title: "animaux1", question: "Comment s'appelait ton premier animal ? ", scenario: scenario1)
 card3= Card.create(title: "amis", question: "qui est ta meilleure amie", scenario: scenario1)
 card4= Card.create(title: "passion", question: "quelle est ta passion", scenario: scenario1)
-card5= Card.create(title: "passion", question: "Ton plus beau voyage", scenario: scenario1)
-card6= Card.create(title: "passion", question: "En quelle année as-tu étais diplomée", scenario: scenario1)
+card5= Card.create(title: "voyage", question: "Ton plus beau voyage", scenario: scenario1)
+card6= Card.create(title: "ecole", question: "En quelle année as-tu été diplomée", scenario: scenario1)
 puts '3 cards created!'
 
 puts 'Creating users...'
