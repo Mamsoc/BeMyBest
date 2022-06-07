@@ -44,7 +44,6 @@
 
 // .dropdown-item :hover {
 //   background-color: white;
-
 // }
 
 .main-menu-bottom {
@@ -70,17 +69,33 @@
 .main-menu-bottom-links {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: $title_logo;
-  padding-top: 10px;
+  justify-content: space-evenly;
 }
 
-.user-photo{
-  border-radius: 50%;
-  height: 6vh;
-  width: 6vh;
-  object-fit: cover;
+.main-menu-bottom-picto{
+  color: $title_logo;
+  padding-top: 6vh;
+  font-size: 3vh;
 }
+
+.main-menu-bottom-logo{
+  border-radius: 50%;
+  height: 8vh;
+  width: 8vh;
+  margin-top: 3vh;
+  background-color: $title_logo;
+  background-image: image-url("logo_blanc.png");
+  background-size: 8vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+// .user-photo{
+//   border-radius: 50%;
+//   height: 6vh;
+//   width: 6vh;
+//   object-fit: cover;
+// }
 
 // .main-menu-bottom-links a {
 //   color: $title_logo;
