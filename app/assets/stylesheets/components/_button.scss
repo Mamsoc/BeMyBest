@@ -1,16 +1,14 @@
 .btn-flat {
   color: $content;
-  padding: 8px 24px;
+  padding: 12px 24px;
   font-family: $p-font;
-  border-radius: 4px;
+  border-radius: 30px;
   background: $subTitle_button_picto;
-  opacity: 0.8;
 }
 
 .btn-flat:hover {
   background: $subTitle_button_picto;
   color: $content;
-  opacity: 1;
 }
 
 .btn-home {
