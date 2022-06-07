@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(projects_params)
     @project.user = current_user
+    @project.favorite = false
     @project.code = SecureRandom.hex(5)
     authorize @project
     if @project.save
@@ -57,7 +58,7 @@ class ProjectsController < ApplicationController
 
 
   def projects_params
-    params.require(:project).permit(:title, :description, :photo, :scenario_id)
+    params.require(:project).permit(:title, :description, :photo, :scenario_id, :favorite)
   end
 
   def set_projects

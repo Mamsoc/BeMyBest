@@ -81,9 +81,17 @@
   .card-game-edit {
     color: $title_logo;
     position: absolute;
-    margin-left: 288px;
+    margin-left: 280px;
     margin-top: 10px;
-    font-size: 24px;
+    font-size: 3vh;
+  }
+
+  .card-project-favorite{
+    color: $title_logo;
+    position: absolute;
+    margin-left: 280px;
+    margin-top: 10px;
+    font-size: 3vh;
   }
 
   .card-description-p {

@@ -5,27 +5,51 @@
 
 
   <% if @current_user_projects.empty? %>
+
     <%= link_to "Démarre ton 1er jeu !", new_project_path, class: "btn btn-flat w-100"%>
+
   <% else %>
+
     <%= link_to "Démarre un nouveau jeu !", new_project_path, class: "btn btn-flat w-100 my-2"%>
+
     <div class="title-jeux">
       <h2 class="h2"> <i class="fa-solid fa-puzzle-piece"></i> Tes jeux déjà créés : </h2>
     </div>
+
     <div class="cards">
       <% @current_user_projects.each do |project| %>
         <div class="card-category d-block m-3">
+
           <%= link_to project_path(project) do %>
-            <% if project.photo.attached? %>
-              <%= cl_image_tag project.photo.key, class: "img-card d-block w-100"%>
-            <% end %>
+            <div>
+
+                <%# <%= simple_form_for(project) do |f| %>
+                  <%# <%= f.input :favorite, as: :boolean, label: "Vos photos :", input_html: { class: 'fileinput-button ' } %>
+                  <%# <%= f.submit class: "",  input_html: { <i class="fa-solide fa-heart card-project-favorite"></i> } %>
+                <%# <% end %>
+
+              <% if project.favorite %>
+                  <i class="fa-solide fa-heart card-project-favorite"></i>
+              <% else %>
+                  <i class="fa-regular fa-heart card-project-favorite"></i>
+              <% end %>
+
+              <% if project.photo.attached? %>
+                <%= cl_image_tag project.photo.key, class: "img-card d-block w-100"%>
+              <% end %>
+
+            </div>
             <div class="card-project-relative card-description-p">
               <h2 class="h2"> <%= project.title %> </h2>
               <p class="p">  <%= project.description.length > 25 ? "#{project.description.first(25)}..." : project.description %></p>
             </div>
+
           <% end %>
+
           <%= link_to project_path(project), data: {turbo_method: :delete, turbo_confirm: "Confirmes-tu la suppression de ce projet ?"} do %>
             <i class="fa-solid fa-trash-can card-project-trash"></i>
           <% end %>
+
         </div>
       <% end %>
     </div>
