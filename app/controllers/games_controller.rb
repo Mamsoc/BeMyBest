@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :index, :show ]
+  skip_before_action :authenticate_user!, only: [:index, :show, :win]
 
   def skip_pundit?
     true
@@ -17,5 +17,6 @@ class GamesController < ApplicationController
     @next_card = @cards[@cards.index(@card) + 1]
     @memory = @card.memories.where(project_id: @project).first
   end
+
 
 end

@@ -39,13 +39,14 @@ class ProjectsController < ApplicationController
   def win
     @project = Project.find(params[:project_id])
     authorize @project
+    @memories = @project.memories
   end
 
   def thanks
     @project = Project.find(params[:project_id])
     authorize @project
   end
-  
+
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
