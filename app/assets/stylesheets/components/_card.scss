@@ -50,6 +50,12 @@
     border-radius: 15px;
   }
 
+  .add-photo-show {
+    font-family: $content;
+    display: flex;
+    justify-content: right;
+  }
+
 // Show page project
   .image_button{
     position: relative;

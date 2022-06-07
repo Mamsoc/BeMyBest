@@ -1,15 +1,23 @@
 
 
-<div class="container d-block my-2">
-  <h1 class="h1" > <%=  @project.title %> </h1>
-  <div class="image_button">
-    <p> <%= cl_image_tag @project.photo.key, class: "w-100"%> </p>
-    <div class="background-show">
-      <%= link_to "Accéder aux photos", project_memories_path(@project), class: "btn btn-flat w-75 my-3"%> </p>
+<div class="container d-block my-2 mt-5">
+  <div class="image_button card-category-game">
+    <p class="p"> <%= cl_image_tag @project.photo.key, class: "w-100"%> </p>
+    <div>
+      <h1 class="h1" > <%=  @project.title %> </h1>
     </div>
+    <div>
+      <p class="p" > <%=  @project.description %> </p>
+    </div>
+    <div>
+      <%= link_to project_memories_path(@project), class: " h2 add-photo-show" do %>
+      <i class="fa-solid fa-camera-retro"></i>
+      <% end %>
+    </div>
+
   </div>
 
-  <%= link_to "personnaliser le jeu ", edit_project_path(@project), class: "btn btn-flat w-100"%> </p>
+
 
   <div class="accordion" id="accordionExample">
   <div class="accordion-item">
@@ -20,7 +28,7 @@
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>Invites du monde</strong> pour récolter le plus de souvenirs!
+        <strong>Invite du monde</strong> pour récolter le plus de souvenirs !
         <div class="icon-link-project">
           <a class="icon_color" href="https://wa.me/?text=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/memories/new"><i class="fa-brands fa-whatsapp fa-sm"></i></a>
           <a class="icon_color" href="mailto:?subject=Participes au cadeau BMyBest&body=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/memories/new"><i class="fa-solid fa-envelope fa-sm"></i></a>
@@ -36,12 +44,16 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>Tout est prêt?</strong>
-           Alors cest le moment d'envoyer son cadeau à <%= @project.besty_first_name %>
+        <strong>Tout est prêt ?</strong>
+           Alors c'est le moment d'envoyer son cadeau à <%= @project.besty_first_name %>
         <div class="icon-link-project">
           <a class="icon_color" href="https://wa.me/?text=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/games"><i class="fa-brands fa-whatsapp fa-sm"></i></a>
           <a class="icon_color" href="mailto:?subject=Participes au cadeau BMyBest&body=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/games"><i class="fa-solid fa-envelope fa-sm"></i></a>
         </div>
       </div>
     </div>
+  </div>
+
+  <div>
+    <%= link_to "Personnaliser le jeu ", edit_project_path(@project), class: "btn btn-flat w-100"%> </p>
   </div>
