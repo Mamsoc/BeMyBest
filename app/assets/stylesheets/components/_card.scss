@@ -96,4 +96,34 @@
     margin-left: 10px;
   }
 
+  // scenario
+
+  .img-scenario-card {
+    max-width: 320px;
+    object-fit: cover;
+    max-height: 231px;
+    border-radius: 15px;
+    background-color: rgb(0, 0, 0.3);
+  }
+
+  .scenario-card {
+    display: flex;
+    align-items: center;
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 20px;
+    justify-content: space-around !important;
+  }
+
+  .scenario-card > p {
+    position: absolute;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+
+
+
+
 }
