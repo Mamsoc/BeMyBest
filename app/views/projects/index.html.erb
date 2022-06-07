@@ -1,15 +1,26 @@
-<div class="container mt-3">
-  <h1 class="h1 mb-2"> Bienvenue <%= @current_user.first_name %> </h1>
+<%# <style>
+body {
+  background-color: #F9F9F9;
+}
+p, h1, h2, a{
+  color: #2F3984;
+}
+</style> %>
 
-  <p class="p"> Un de tes amis fête bientôt son anniversaire ? <br> Offre-lui une expérience unique avec BE MY BEST ! </p>
+
+<div class="container mt-5">
+  <h1 class="bienvenue"> Bienvenue <%= @current_user.first_name %> 👋 </h1>
+
+  <p class="h3 mt-4 mb-4"> Un de tes amis fête bientôt son anniversaire ? <br>
+  Offre-lui une expérience unique avec BE MY BEST ! </p>
 
 
   <% if @current_user_projects.empty? %>
-    <%= link_to "Démarre ton 1er jeu !", new_project_path, class: "btn btn-flat w-100"%>
+    <p class="p"><%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100"%></p>
   <% else %>
-    <%= link_to "Démarre un nouveau jeu !", new_project_path, class: "btn btn-flat w-100 my-2"%>
-    <div class="title-jeux">
-      <h2 class="h2"> <i class="fa-solid fa-puzzle-piece"></i> Tes jeux déjà créés : </h2>
+    <%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100 my-2"%>
+    <div class="my-4">
+      <h2 class= "m-3 h1"> <i class="fa-solid fa-puzzle-piece"></i> Mes jeux : </h2>
     </div>
     <div class="cards">
       <% @current_user_projects.each do |project| %>
@@ -17,14 +28,15 @@
           <%= link_to project_path(project) do %>
             <% if project.photo.attached? %>
               <%= cl_image_tag project.photo.key, class: "img-card d-block w-100"%>
+                <%= link_to project_path(project), data: {turbo_method: :delete, turbo_confirm: "Confirmes-tu la suppression de ce projet ?"} do %>
+                <i class="fa-solid fa-trash card-project-trash"></i>
             <% end %>
             <div class="card-project-relative card-description-p">
               <h2 class="h2"> <%= project.title %> </h2>
               <p class="p">  <%= project.description.length > 25 ? "#{project.description.first(25)}..." : project.description %></p>
             </div>
           <% end %>
-          <%= link_to project_path(project), data: {turbo_method: :delete, turbo_confirm: "Confirmes-tu la suppression de ce projet ?"} do %>
-            <i class="fa-solid fa-trash-can card-project-trash"></i>
+
           <% end %>
         </div>
       <% end %>
