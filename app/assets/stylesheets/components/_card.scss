@@ -20,6 +20,7 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 2px;
     max-height: 300px;
+    border-radius: 15px;
   }
 
   .card-category-game{
@@ -42,9 +43,11 @@
     color: $content;
   }
   .img-card {
+    padding: 10px;
     max-width: 320px;
     object-fit: cover;
     max-height: 200px;
+    border-radius: 15px;
   }
 
 // Show page project
@@ -71,11 +74,13 @@
   }
 
   .card-project-trash {
-    color: $title_logo;
+    color: red;
     position: absolute;
-    margin-left: 282px;
-    margin-top: -24px;
-    opacity: 0.6;
+    margin-left: 276px;
+    margin-top: -42px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
   }
 
   .card-game-edit {
