@@ -103,7 +103,7 @@
     object-fit: cover;
     max-height: 231px;
     border-radius: 15px;
-    z-index: 1;
+
   }
 
   .scenario-card {
@@ -113,8 +113,6 @@
     max-width: 350px;
     margin: 20px;
     justify-content: space-around !important;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
-    z-index: 3;
   }
 
   .scenario-card > p {
