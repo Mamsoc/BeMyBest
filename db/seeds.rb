@@ -43,8 +43,8 @@ users = User.all
 puts '5 users created!'
 
 puts 'Creating projects...'
-project = Project.create(title: "Anniversaire de Lucile", description: "yeay c'est l'anniv de Lucile preparons-lui une surprise", user: user1, scenario: scenario1)
-project2 = Project.create(title: "Anniversaire d'Elodie", description: "25 ans Elodie", user: user2, scenario: scenario1)
+project = Project.create(title: "Anniversaire de Lucile", description: "yeay c'est l'anniv de Lucile preparons-lui une surprise", user: user1, besty_first_name: "Lucile")
+project2 = Project.create(title: "Anniversaire d'Elodie", description: "25 ans Elodie", user: user2, besty_first_name: "Elodie")
 img_project = File.open(Rails.root.join("app/assets/images/img_seed/Lucile.jpg"))
 img_project2 = File.open(Rails.root.join("app/assets/images/img_seed/elodie1.JPG"))
 project.photo.attach(io: img_project, filename: "Lucile.jpg", content_type: "image/jpg")
