@@ -1,8 +1,10 @@
 <div class="main-menu-bottom">
   <div class="main-menu-bottom-links">
 
-      <% favorite = @current_user_projects.find(favorite: true) %>
-      <a href="/projects/#{favorite}"><i class="fa-regular fa-heart main-menu-bottom-picto"></i></a>
+      <%# <% favorite = @current_user_projects.find(favorite: true) %>
+      <%# <a href="/projects/#{favorite}"><i class="fa-regular fa-heart main-menu-bottom-picto"></i></a> %>
+      <%# ligne ci-dessous a supprimer après ajout du statut favoris sur projet %>
+      <a href="/projects"><i class="fa-regular fa-heart main-menu-bottom-picto"></i></a>
 
       <a href="#"><i class="fa-regular fa-comment main-menu-bottom-picto"></i></a>
 
