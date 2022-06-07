@@ -1,29 +1,60 @@
-@media (max-width: 540px) {
-  /* Pour un écran < 540px, cette classe CSS s'applique */
-  .home-banner {
-    width: 390px;
-  }
-}
 
 .home-banner {
-  background-image: asset-url("home_visuel.png");
+  background-image: asset-url("home-back.png");
   background-size: cover;
   background-position: center;
-  height: 82vh;
+  height: 125vh;
   color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .banner-h1{
-  margin-top: 170px;
+  position: absolute;
+  top: 346px;
+  right: 88px;
+
 }
 .banner-p{
 padding: 25px;
 }
 .banner-btn{
-  background: $subTitle_button_picto;
-  color: $content;
+  padding: 16px;
+  position: absolute;
+  background: #efca13;
+  border-radius: 30px;
+  width: 261px;
+  color: #454343;
   text-decoration: none;
-  border-radius: 5px;
+  top: 685px;
+  right: 63px;
+}
+
+
+.line-1{
+  position: relative;
+  top: 39%;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 2s steps(20) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 7em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
 }
