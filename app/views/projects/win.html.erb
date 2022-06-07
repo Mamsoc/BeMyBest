@@ -1,3 +1,12 @@
-<div class="congrats-centered">
-  <%= image_tag "congrats.gif", class: "congrats_gif" %>  
+<div class="container">
+<p><br></p>
+  <div id="contour">
+    <div class="d-flex flex-wrap">
+    <% n = 0 %>
+      <% @memories.each do |memory|%>
+        <%= cl_image_tag memory.photo.key, class:"img-montage#{n}" %>
+        <% n+=1 %>
+        <% end %>
+    </div>
+  </div>
 </div>
