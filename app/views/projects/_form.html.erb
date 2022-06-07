@@ -1,4 +1,4 @@
-<div class="container my-2">
+<div class="container mt-5 my-2 h3">
 
 <p> <br></p>
 
@@ -11,6 +11,8 @@
     <p> <br></p>
     <%= f.input :photo, as: :file, label: "Photo du jeu :", input_html: { class: 'fileinput-button ' } %>
     <p> <br></p>
-    <%= f.submit class: "w-100 btn btn-flat ",  value: "Créer votre jeu"%>
+    <div class="mt-5">
+      <%= f.submit class: "w-100 btn btn-flat",  value: "Créer ton jeu"%>
+    </div>
   <% end %>
 </div>
