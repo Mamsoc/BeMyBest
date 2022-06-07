@@ -1,13 +1,12 @@
 <div class="main-menu-bottom">
   <div class="main-menu-bottom-links">
 
-      <a href="#"><i class="fa-regular fa-heart main-menu-bottom-picto"></i></a>
+      <% favorite = @current_user_projects.find(favorite: true) %>
+      <a href="/projects/#{favorite}"><i class="fa-regular fa-heart main-menu-bottom-picto"></i></a>
 
-      <a href="/projects"><i class="fa-regular fa-comment main-menu-bottom-picto"></i></a>
+      <a href="#"><i class="fa-regular fa-comment main-menu-bottom-picto"></i></a>
 
-      <div class="main-menu-bottom-logo">
-        <a href="#"></a>
-      </div>
+      <a href="/projects" class="main-menu-bottom-logo"></a>
 
       <a href="#"><i class="fa-regular fa-circle-question main-menu-bottom-picto"></i></a>
 
