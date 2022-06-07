@@ -1,4 +1,4 @@
-<h1 class="d-none" > Mon jeu personnalisé  </h1>
+<h1 class="d-none h1" > Mon jeu personnalisé  </h1>
 
 <% if @cards.any? %>
 
@@ -6,34 +6,43 @@
     <% @cards.each do |card| %>
       <div class="card-category-game" id="card_<%= card.id %>">
         <% card_memory = @memories.find_by(card: card) %>
-        <p> <%= card.question %> ?</p>
+        <h3 class="h3"> <%= card.question %> ? </h3>
 
         <% if card_memory %>
           <div class="card-image">
+            <%= link_to project_card_path(@project, card) do %>
+              <i class="fa-solid fa-pen-to-square card-game-edit "></i>
+            <% end %>
             <%= cl_image_tag card_memory.photo.key, class: "img-card d-block w-100"%> <br>
           </div>
-          <div class= "d-flex justify-content-center">
-            <%= link_to "Sélectionner un souvenir", project_card_path(@project, card), class: "btn btn-flat" %>
+          <%# Bouton masque pour edition depuis icone %>
+          <%# <div class= "d-flex justify-content-center"> %>
+            <%#= link_to "Sélectionner un souvenir", project_card_path(@project, card), class: "btn btn-flat" %>
+          <%# </div> %>
+          <div class="d-flex">
+            <p class="p w-25">Réponse : </p>
+            <div>
+              <h3 class = "h3 w-75"><%= card_memory.response %></h3>
+            </div>
           </div>
           <div class="card-form">
             <%= simple_form_for [@project, card_memory], html: {"data-turbo": false} do |f| %>
-            <br>
-              <%= f.input :response, label: "Saisir la réponse"%>
+              <%= f.input :response, label: "Modifier la réponse :", label_html: { class: 'p' }, input_html: { class: 'p' }%>
               <div class= "d-flex justify-content-center">
-              <%= f.submit class: "btn btn-flat w-100", value: "Enregistrer votre réponse" %>
+                <%= f.submit class: "btn btn-flat w-100", value: "Enregistrer votre réponse" %>
               </div>
             <% end %>
           </div>
-
         <% else %>
-          <p>Affecter la carte</p>
-          <%= link_to "Choisir un souvenir", project_card_path(@project, card), class: "btn btn-flat"%>
+          <div class= "d-flex justify-content-center" >
+            <%= link_to "Choisir un souvenir", project_card_path(@project, card), class: "btn btn-flat"%>
+          </div>
         <% end %>
       </div>
     <% end %>
   </div>
 <% else %>
-  <p>Le scenario est vide</p>
+  <p class="p">Le scenario est vide</p>
 <% end %>
 
 
