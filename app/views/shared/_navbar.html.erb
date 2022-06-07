@@ -1,29 +1,23 @@
-
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "BeMyBest_logo.png" %>
-    <% end %>
-      <% if user_signed_in? %>
-        <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
-        <i class="fa-solid fa-power-off button-navbar"></i>
-        <% end %>
-      <% end %>
-  </div>
-</div>
-
 <div class="main-menu-bottom">
   <div class="main-menu-bottom-links">
+
     <% if user_signed_in? %>
-      <a href="#"><i class="fa fa-star" ></i></a>
-      <a href="#"><i class="fa-solid fa-envelope"></i></a>
-      <a href="/projects"><i class="fa-solid fa-puzzle-piece"></i></a>
-      <a href="/users/edit"><i class="fas fa-user-ninja"></i></a>
+      <% if current_user.photo %>
+          <%= image_tag(current_user.photo, class: "user-photo") %>
+        <% else %>
+          <%= File.open(Rails.root.join("app/assets/images/default_user.jpg")) %>
+      <% end %>
     <% else %>
-      <a href="#"><i class="fa fa-star" ></i></a>
-      <a href="#"><i class="fa-solid fa-envelope"></i></a>
-      <a href="/projects"><i class="fa-solid fa-puzzle-piece"></i></a>
-      <a href="/users/sign_in"><i class="fas fa-user-alt-slash"></i></a>
+      <a href="#"><i class="fa-regular fa-user"></i></a>
     <% end %>
+
+      <a href="#"><i class="fa-regular fa-star"></i></a>
+      <a href="/projects"><i class="fa-regular fa-comment"></i></a>
+      <% if user_signed_in? %>
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <% end %>
+      <% end %>
+      <a href="/users/edit"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
   </div>
 </div>
