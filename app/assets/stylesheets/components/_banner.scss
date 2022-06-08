@@ -1,0 +1,11 @@
+.finish-banner {
+  background-image: asset-url("win.png");
+  background-size: cover;
+  background-position: center;
+  height: 125vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
