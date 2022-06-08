@@ -11,9 +11,9 @@
     <input type="text" data-hiddenbutton-target="input" data-action="keyup->hiddenbutton#responseTrue" class="input-field w-100">
     <p> <br></p>
     <% if @next_card == nil %>
-      <%=  link_to "finish",   project_win_path(@project), "data-hiddenbutton-target": "button", class: "btn-game w-100"%>
+      <%=  link_to "finish",   project_win_path(@project), "data-hiddenbutton-target": "button", class: "btn btn-flat w-100", style:"display: none"%>
     <% else %>
-      <%=  link_to "Next question",  project_game_path(@project, @next_card), "data-hiddenbutton-target": "button", class: "btn-game w-100"%>
+      <%=  link_to "Next question",  project_game_path(@project, @next_card), "data-hiddenbutton-target": "button", class: "btn btn-flat w-100", style:"display: none"%>
     <% end %>
 
   </div>

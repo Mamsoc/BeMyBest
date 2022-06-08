@@ -21,6 +21,7 @@
     border-radius: 2px;
     max-height: 300px;
     border-radius: 15px;
+
   }
 
   .card-category-game{
@@ -50,7 +51,45 @@
     border-radius: 15px;
   }
 
+  .add-photo-show {
+    font-family: $content;
+    display: flex;
+    justify-content: right;
+  }
+
+
+
 // Show page project
+
+.margin-show-clear {
+margin: 30px 10px;
+}
+
+.margin-show-project-photo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.margin-show-project {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.margin-show-list-perso {
+  margin-top: 50px;
+}
+
+.margin-show-list {
+  margin-top: 100px;
+}
+
+.add-photo-show {
+  font-family: $content;
+  display: flex;
+  justify-content: right;
+}
+
   .image_button{
     position: relative;
   }
@@ -67,6 +106,19 @@
     opacity: 1;
   }
 
+  .picture-photo {
+    position: absolute;
+    margin-left: 310px;
+    margin-top: -75px;
+  }
+
+  .photo-project-id {
+    border-radius: 5px;
+    height: 280px;
+    box-shadow: 0 0 15px rgba(0,0,0,1);
+    background-position: center;
+    background-size: cover
+  }
 
   // CSS cartes de l'index project
   .card-project-relative {
@@ -86,9 +138,17 @@
   .card-game-edit {
     color: $title_logo;
     position: absolute;
-    margin-left: 288px;
+    margin-left: 280px;
     margin-top: 10px;
-    font-size: 24px;
+    font-size: 3vh;
+  }
+
+  .card-project-favorite{
+    color: $title_logo;
+    position: absolute;
+    margin-left: 280px;
+    margin-top: 10px;
+    font-size: 3vh;
   }
 
   .card-description-p {
@@ -99,20 +159,26 @@
   // scenario
 
   .img-scenario-card {
-    max-width: 320px;
+    width: 320px;
+    height: 230px;
     object-fit: cover;
-    max-height: 231px;
     border-radius: 15px;
-
+    position: relative;
+    z-index: -1;
+    display: block;
   }
 
   .scenario-card {
     display: flex;
     align-items: center;
     grid-template-columns: 1fr;
-    max-width: 350px;
-    margin: 20px;
     justify-content: space-around !important;
+    margin: 10px;
+    width: 320px;
+    background-size: cover;
+    height: 230px;
+    border-radius: 15px;
+
   }
 
   .scenario-card > p {
@@ -121,7 +187,13 @@
     font-size: 25px;
     font-weight: bold;
   }
+  
   .p_card_memo_index{
     padding: 0 10px;
+  }
+
+  .backgroundlin {
+    border-radius: 15px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 100%)
   }
 }

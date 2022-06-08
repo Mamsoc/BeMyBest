@@ -16,26 +16,40 @@ p, h1, h2, a{
 
 
   <% if @current_user_projects.empty? %>
+
     <p class="p"><%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100"%></p>
   <% else %>
     <%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100 my-2"%>
     <div class="my-4">
       <h2 class= "m-3 h1"> <i class="fa-solid fa-puzzle-piece"></i> Mes jeux : </h2>
     </div>
-    <div class="cards">
+
+    <div class="cards" data-controller="favorite">
       <% @current_user_projects.each do |project| %>
         <div class="card-category d-block m-3">
+
           <%= link_to project_path(project) do %>
+
+            <div>
+
+              <% if project.favorite %>
+                  <i class="fa-solid fa-heart card-project-favorite" data-action="click->favorite#fav" data-favorite-project-id-param="<%= project.id %>" ></i>
+              <% else %>
+                  <i class="fa-regular fa-heart card-project-favorite" data-action="click->favorite#fav" data-favorite-project-id-param="<%= project.id %>"></i>
+              <% end %>
+
             <% if project.photo.attached? %>
               <%= cl_image_tag project.photo.key, class: "img-card d-block w-100"%>
                 <%= link_to project_path(project), data: {turbo_method: :delete, turbo_confirm: "Confirmes-tu la suppression de ce projet ?"} do %>
                 <i class="fa-solid fa-trash card-project-trash"></i>
             <% end %>
+
+            </div>
+
             <div class="card-project-relative card-description-p">
               <h2 class="h2"> <%= project.title %> </h2>
               <p class="p">  <%= project.description.length > 25 ? "#{project.description.first(25)}..." : project.description %></p>
             </div>
-          <% end %>
 
           <% end %>
         </div>

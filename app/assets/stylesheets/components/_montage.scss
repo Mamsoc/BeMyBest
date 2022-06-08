@@ -3,70 +3,10 @@
   height: 619px;
 }
 
-.img-montage0 {
-  max-width: 200px;
-  object-fit: cover;
+.img-montage {
+  max-width: 180px;
+  object-fit:contain;
   max-height: 150px;
+  overflow: hidden;
 
-
-}
-.img-montage1 {
-  max-width: 160px;
-  object-fit: cover;
-  max-height: 220px;
-  position: relative;
-  top: 0px;
-
-}
-.img-montage2 {
-  max-width: 200px;
-  object-fit: cover;
-  max-height: 277px;
-  position: relative;
-  top: -64px;
-}
-.img-montage3 {
-  max-width: 245px;
-  object-fit: cover;
-  max-height: 204px;
-  position: relative;
-  top: -147px;
-  left: 0px;
-}
-
-.img-montage4 {
-  max-width: 238px;
-  object-fit: cover;
-  max-height: 120px;
-  position: relative;
-  top: -470px;
-  left: 200px;
-}
-
-
-
-.img-montage5 {
-  max-width: 214px;
-  object-fit: cover;
-  max-height: 200px;
-  position: relative;
-  top: -268px;
-}
-
-.img-montage6 {
-  max-width: 360px;
-  max-height: 143px;
-  object-fit: cover;
-  position: relative;
-  top: -411px;
-  right: -170px;
-}
-
-.img-montage7{
-  max-width: 308px;
-  object-fit: cover;
-  max-height: 203px;
-  position: relative;
-  top: -757px;
-  right: -180px;
 }
