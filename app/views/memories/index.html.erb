@@ -1,20 +1,22 @@
-<div class="container">
-<h1> Mes souvenirs partagés :  </h1>
+<div class="grey-banner">
+  <div class="container">
+  <h1> Mes souvenirs partagés :  </h1>
 
-<%= link_to "Ajouter un souvenir", new_project_memory_path(@project), :class => 'btn btn-flat' %>
- <div class="cards">
-  <% @memories.each do |memory| %>
-    <% if memory.present? %>
-    <div class="card-category d-block m-3">
-      <%= cl_image_tag memory.photo.key, class: "img-card d-block w-100"%>
-        <div>
-          <p class="p_card_memo_index"><%=  memory.legend %> </p>
-        </div>
+  <%= link_to "Ajouter un souvenir", new_project_memory_path(@project), :class => 'btn btn-flat' %>
+  <div class="cards">
+    <% @memories.each do |memory| %>
+      <% if memory.present? %>
+      <div class="card-category d-block m-3 bg-white">
+        <%= cl_image_tag memory.photo.key, class: "img-card d-block w-100"%>
+          <div>
+            <p class="p_card_memo_index bg-white"><%=  memory.legend %> </p>
+          </div>
+      <% end %>
+      </div>
     <% end %>
-    </div>
-  <% end %>
-</div>
-  <% if current_user != @project.user %>
-    <%= link_to "valider vos souvenirs", project_thanks_path, :class => 'btn btn-flat' %>
-  <% end %>
+  </div>
+    <% if current_user != @project.user %>
+      <%= link_to "valider vos souvenirs", project_thanks_path, :class => 'btn btn-flat' %>
+    <% end %>
+  </div>
 </div>
