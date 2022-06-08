@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :projects, only: [:new , :create, :show, :edit, :update, :index, :destroy] do
+    member do
+      patch '/fav', to: 'projects#fav'
+    end
+
     resources :memories, only: [:new , :create, :show, :edit, :update, :index]
     resources :cards, only: [:index, :show]
     resources :games, only: [:index, :show]
