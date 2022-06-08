@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_projects, only: [:show, :update, :edit, :destroy]
+  before_action :set_projects, only: [:show, :update, :edit, :destroy, :fav]
 
   def index
     @current_user_projects = policy_scope(Project.where(user_id: current_user))
@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(projects_params)
     @project.user = current_user
+    @project.favorite = false
     @project.code = SecureRandom.hex(5)
     authorize @project
     if @project.save
@@ -53,11 +54,25 @@ class ProjectsController < ApplicationController
     redirect_to projects_path, status: :see_other
   end
 
+  def fav
+    @fav = Project.find_by(favorite: true)
+    @fav&.update(favorite: false)
+
+    if @project.favorite
+      @project.update(favorite: false)
+    else
+      @project.update(favorite: true)
+    end
+
+    render json: { favorite: @project.favorite, previous_favorite: @fav&.id }
+
+    authorize @project
+  end
+
   private
 
-
   def projects_params
-    params.require(:project).permit(:title, :description, :photo, :scenario_id)
+    params.require(:project).permit(:title, :description, :photo, :scenario_id, :favorite, :besty_first_name)
   end
 
   def set_projects

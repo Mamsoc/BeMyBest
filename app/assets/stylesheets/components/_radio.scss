@@ -13,10 +13,11 @@
 }
 
 /* CHECKED STYLES */
-[type=radio]:checked + img {
+[type=radio]:checked + .backgroundlin {
   outline: 10px solid #efca13;
     overflow: hidden;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    border-radius: 7px;
-    max-height: 300px;
+    border-radius: 15px;
+    max-height: 100%;
+    max-width: 100%;
 }

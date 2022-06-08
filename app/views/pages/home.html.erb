@@ -1,9 +1,10 @@
-
-
 <div class="home-banner">
+  <p class="line-1 anim-typewriter">La vie est un jeu</p>
+
   <% if @current_user_projects.empty? %>
-    <%= link_to "Créer votre jeu !", new_project_path, class: "btn-home"%>
-  <% else %>
-    <%= link_to "Accéder à vos jeux !", projects_path, class: "btn-home"%>
-  <% end %>
+
+      <%= link_to "Créer votre jeu !", new_project_path, class: "btn banner-btn"%>
+    <% else %>
+      <%= link_to "Accéder à vos jeux !", projects_path, class: "btn banner-btn"%>
+    <% end %>
 </div>

@@ -5,5 +5,6 @@ class Project < ApplicationRecord
   has_many :memories
   validates :description, presence: true
   validates :title, presence: true
+  validates :besty_first_name, presence: true
   validates :photo, presence: true
 end
