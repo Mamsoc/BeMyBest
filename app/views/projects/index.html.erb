@@ -1,13 +1,3 @@
-<%# <style>
-body {
-  background-color: #F9F9F9;
-}
-p, h1, h2, a{
-  color: #2F3984;
-}
-</style> %>
-
-
 <div class="container mt-5">
   <h1 class="bienvenue"> Bienvenue <%= @current_user.first_name %> 👋 </h1>
 
@@ -38,11 +28,12 @@ p, h1, h2, a{
                   <i class="fa-regular fa-heart card-project-favorite" data-action="click->favorite#fav" data-favorite-project-id-param="<%= project.id %>"></i>
               <% end %>
 
-            <% if project.photo.attached? %>
-              <%= cl_image_tag project.photo.key, class: "img-card d-block w-100"%>
-                <%= link_to project_path(project), data: {turbo_method: :delete, turbo_confirm: "Confirmes-tu la suppression de ce projet ?"} do %>
-                <i class="fa-solid fa-trash card-project-trash"></i>
-            <% end %>
+              <% if project.photo.attached? %>
+                <%= cl_image_tag project.photo.key, class: "img-card d-block w-100"%>
+                  <%= link_to project_path(project), data: {turbo_method: :delete, turbo_confirm: "Confirmes-tu la suppression de ce projet ?"} do %>
+                  <i class="fa-solid fa-trash card-project-trash"></i>
+                <% end %>
+              <% end %>
 
             </div>
 
