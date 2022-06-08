@@ -17,7 +17,8 @@
 
       <a href="/projects" class="main-menu-bottom-logo"></a>
 
-      <a href="#"><i class="fa-regular fa-circle-question main-menu-bottom-picto"></i></a>
+      <%# <a href="#"><i class="fa-regular fa-circle-question main-menu-bottom-picto"></i></a> %>
+      <a href="mailto:contact@bmybest.me?subject=BeMyBest ♡ Question de <%= @current_user.first_name %>&body= Bonjour <%= @current_user.first_name %>, comment pouvons-nous t'aider ?"><i class="fa-regular fa-circle-question main-menu-bottom-picto"></i></a>
 
       <% if user_signed_in? %>
         <a href="/users/edit"><i class="fa-regular fa-user main-menu-bottom-picto"></i></a>
