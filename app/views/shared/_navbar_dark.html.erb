@@ -1,0 +1,22 @@
+<div class="main-menu-bottom-dark">
+  <div class="main-menu-bottom-dark-links">
+
+      <%# <% favorite = @current_user_projects.find(favorite: true) %>
+      <%# <a href="/projects/#{favorite}"><i class="fa-regular fa-heart main-menu-bottom-picto"></i></a> %>
+      <%# ligne ci-dessous a supprimer après ajout du statut favoris sur projet %>
+      <a href="/projects"><i class="fa-regular fa-heart main-menu-bottom-dark-picto"></i></a>
+
+      <a href="#"><i class="fa-regular fa-comment main-menu-bottom-dark-picto"></i></a>
+
+      <a href="/projects" class="main-menu-bottom-dark-logo"></a>
+
+      <a href="#"><i class="fa-regular fa-circle-question main-menu-bottom-dark-picto"></i></a>
+
+      <% if user_signed_in? %>
+        <a href="/users/edit"><i class="fa-regular fa-user main-menu-bottom-dark-picto"></i></a>
+      <% else %>
+        <a href="/users/sign_in"><i class="fa-regular fa-arrow-right-to-bracket main-menu-bottom-dark-picto"></i></a>
+    <% end %>
+
+  </div>
+</div>

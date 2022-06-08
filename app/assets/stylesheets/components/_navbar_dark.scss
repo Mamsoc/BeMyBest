@@ -1,0 +1,43 @@
+.main-menu-bottom-dark {
+  position: fixed;
+  bottom: 0;
+  height: 12vh;
+  margin: 0;
+  background-image: image-url("nav_bar_back_dark.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100%;
+  opacity: 1;
+  width: 100%;
+  z-index: 1000;
+  -moz-transition: all .4s ease-out;
+  -o-transition: all .4s ease-out;
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.main-menu-bottom-dark-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.main-menu-bottom-dark-picto{
+  color: whitesmoke;
+  padding-top: 6vh;
+  font-size: 3vh;
+}
+
+.main-menu-bottom-dark-logo{
+  border-radius: 50%;
+  height: 8vh;
+  width: 8vh;
+  margin-top: 3vh;
+  background-color: whitesmoke;
+  background-image: image-url("logo.png");
+  background-size: 8vh;
+  background-repeat: no-repeat;
+  background-position: center;
+}
