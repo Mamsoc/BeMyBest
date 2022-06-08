@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_projects, only: [:show, :update, :edit, :destroy]
+  before_action :set_projects, only: [:show, :update, :edit, :destroy, :fav]
 
   def index
     @current_user_projects = policy_scope(Project.where(user_id: current_user))
@@ -52,6 +52,21 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
     redirect_to projects_path, status: :see_other
+  end
+
+  def fav
+    @fav = Project.find_by(favorite: true)
+    @fav&.update(favorite: false)
+
+    if @project.favorite
+      @project.update(favorite: false)
+    else
+      @project.update(favorite: true)
+    end
+
+    render json: { favorite: @project.favorite, previous_favorite: @fav&.id }
+
+    authorize @project
   end
 
   private

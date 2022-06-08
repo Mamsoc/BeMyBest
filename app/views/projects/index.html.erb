@@ -16,22 +16,17 @@
       <h2 class="h2"> <i class="fa-solid fa-puzzle-piece"></i> Tes jeux déjà créés : </h2>
     </div>
 
-    <div class="cards">
+    <div class="cards" data-controller="favorite">
       <% @current_user_projects.each do |project| %>
         <div class="card-category d-block m-3">
 
           <%= link_to project_path(project) do %>
             <div>
 
-                <%# <%= simple_form_for(project) do |f| %>
-                  <%# <%= f.input :favorite, as: :boolean, label: "Vos photos :", input_html: { class: 'fileinput-button ' } %>
-                  <%# <%= f.submit class: "",  input_html: { <i class="fa-solide fa-heart card-project-favorite"></i> } %>
-                <%# <% end %>
-
               <% if project.favorite %>
-                  <i class="fa-solide fa-heart card-project-favorite"></i>
+                  <i class="fa-solid fa-heart card-project-favorite" data-action="click->favorite#fav" data-favorite-project-id-param="<%= project.id %>" ></i>
               <% else %>
-                  <i class="fa-regular fa-heart card-project-favorite"></i>
+                  <i class="fa-regular fa-heart card-project-favorite" data-action="click->favorite#fav" data-favorite-project-id-param="<%= project.id %>"></i>
               <% end %>
 
               <% if project.photo.attached? %>

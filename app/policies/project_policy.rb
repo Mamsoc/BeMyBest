@@ -37,8 +37,12 @@ class ProjectPolicy < ApplicationPolicy
   def thanks?
     true
   end
-  
+
   def destroy?
     true
+  end
+
+  def fav?
+    user == record.user
   end
 end
