@@ -20,6 +20,7 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 2px;
     max-height: 300px;
+    border-radius: 15px;
   }
 
   .card-category-game{
@@ -42,12 +43,52 @@
     color: $content;
   }
   .img-card {
+    padding: 10px;
     max-width: 320px;
     object-fit: cover;
     max-height: 200px;
+    border-radius: 15px;
   }
 
+  .add-photo-show {
+    font-family: $content;
+    display: flex;
+    justify-content: right;
+  }
+
+
+
 // Show page project
+
+.margin-show-clear {
+margin: 30px 10px;
+}
+
+.margin-show-project-photo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.margin-show-project {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.margin-show-list-perso {
+  margin-top: 50px;
+}
+
+.margin-show-list {
+  margin-top: 100px;
+}
+
+.add-photo-show {
+  font-family: $content;
+  display: flex;
+  justify-content: right;
+}
+
   .image_button{
     position: relative;
   }
@@ -64,6 +105,19 @@
     opacity: 1;
   }
 
+  .picture-photo {
+    position: absolute;
+    margin-left: 310px;
+    margin-top: -75px;
+  }
+
+  .photo-project-id {
+    border-radius: 5px;
+    height: 280px;
+    box-shadow: 0 0 15px rgba(0,0,0,1);
+    background-position: center;
+    background-size: cover
+  }
 
   // CSS cartes de l'index project
   .card-project-relative {
@@ -71,11 +125,13 @@
   }
 
   .card-project-trash {
-    color: $title_logo;
+    color: red;
     position: absolute;
-    margin-left: 282px;
-    margin-top: -24px;
-    opacity: 0.6;
+    margin-left: 276px;
+    margin-top: -42px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
   }
 
   .card-game-edit {
@@ -97,6 +153,32 @@
   .card-description-p {
     margin-top: 10px;
     margin-left: 10px;
+  }
+
+  // scenario
+
+  .img-scenario-card {
+    max-width: 320px;
+    object-fit: cover;
+    max-height: 231px;
+    border-radius: 15px;
+
+  }
+
+  .scenario-card {
+    display: flex;
+    align-items: center;
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 20px;
+    justify-content: space-around !important;
+  }
+
+  .scenario-card > p {
+    position: absolute;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
   }
 
 }
