@@ -56,7 +56,39 @@
     justify-content: right;
   }
 
+
+
 // Show page project
+
+.margin-show-clear {
+margin: 30px 10px;
+}
+
+.margin-show-project-photo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.margin-show-project {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+.margin-show-list-perso {
+  margin-top: 50px;
+}
+
+.margin-show-list {
+  margin-top: 100px;
+}
+
+.add-photo-show {
+  font-family: $content;
+  display: flex;
+  justify-content: right;
+}
+
   .image_button{
     position: relative;
   }
@@ -73,6 +105,19 @@
     opacity: 1;
   }
 
+  .picture-photo {
+    position: absolute;
+    margin-left: 310px;
+    margin-top: -75px;
+  }
+
+  .photo-project-id {
+    border-radius: 5px;
+    height: 280px;
+    box-shadow: 0 0 15px rgba(0,0,0,1);
+    background-position: center;
+    background-size: cover
+  }
 
   // CSS cartes de l'index project
   .card-project-relative {
