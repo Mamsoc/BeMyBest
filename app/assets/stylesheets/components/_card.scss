@@ -21,6 +21,7 @@
     border-radius: 2px;
     max-height: 300px;
     border-radius: 15px;
+
   }
 
   .card-category-game{
@@ -110,9 +111,12 @@
     display: flex;
     align-items: center;
     grid-template-columns: 1fr;
-    max-width: 350px;
-    margin: 20px;
     justify-content: space-around !important;
+    padding: 10px;
+    width: 320px;
+    background-size: cover;
+    height: 200px;
+    border-radius: 15px;
   }
 
   .scenario-card > p {
