@@ -1,12 +1,19 @@
+<h1> Merci d'avoir joué</h1>
+
+<style type="text/css">
+  .container {
+    width: 350px;
+    height: 700px;
+    border: 2px solid black
+  }
+
+</style>
+
 <div class="container">
-<p><br></p>
-  <div id="contour">
-    <div class="d-flex flex-wrap">
-    <% n = 0 %>
-      <% @memories.each do |memory|%>
-        <%= cl_image_tag memory.photo.key, class:"img-montage#{n}" %>
-        <% n+=1 %>
-        <% end %>
-    </div>
-  </div>
+  <%= cl_image_tag @memories.first.photo.key, class: "img-montage" %>
+  <%= cl_image_tag @memories.second.photo.key, class: "img-montage" %>
+  <%= cl_image_tag @memories.third.photo.key, class: "img-montage" %>
+  <%= cl_image_tag @memories.fourth.photo.key, class: "img-montage" %>
+  <%= cl_image_tag @memories.fifth.photo.key, class: "img-montage" %>
+  <%= cl_image_tag @memories.last.photo.key, class: "img-montage" %>
 </div>
