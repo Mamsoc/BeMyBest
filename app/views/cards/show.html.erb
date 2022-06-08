@@ -1,55 +1,52 @@
+<div class="grey-banner container">
+  <h1 class="h1 bg-white mt-3"> Souvenirs disponibles  </h1>
+  <p><%= @card.question %></p>
 
-<h1> Souvenirs disponibles  </h1>
+  <div class="cards">
+    <% @available_memories.each do |memory| %>
 
-<p><%= @card.question %></p>
+        <div class="card-category-game bg-white">
+          <%= cl_image_tag memory.photo.key, class: "img-card d-block w-100"%>
 
+          <div>
+            <p><%=  memory.legend %> </p>
+          </div>
 
-
-<div class="cards">
-  <% @available_memories.each do |memory| %>
-
-      <div class="card-category-game">
-        <%= cl_image_tag memory.photo.key, class: "img-card d-block w-100"%>
-
-        <div>
-          <p><%=  memory.legend %> </p>
-        </div>
-
-        <div>
-          <%= simple_form_for [@project, memory], html: {"data-turbo": false} do |f| %>
-            <%= f.hidden_field :card_id, value: @card.id %>
-            <% if @card_memory %>
-              <%= f.hidden_field :response, value: @card_memory.response %>
+          <div>
+            <%= simple_form_for [@project, memory], html: {"data-turbo": false} do |f| %>
+              <%= f.hidden_field :card_id, value: @card.id %>
+              <% if @card_memory %>
+                <%= f.hidden_field :response, value: @card_memory.response %>
+              <% end %>
+              <%= f.submit class: "btn btn-flat"  %>
             <% end %>
-            <%= f.submit class: "btn btn-flat"  %>
-          <% end %>
+          </div>
+
         </div>
 
-      </div>
+    <% end %>
+  </div>
 
-  <% end %>
+  <h1> Souvenirs déjà utilisés  </h1>
+
+  <div class="cards">
+    <% @used_memories.each do |memory| %>
+
+        <div class="card-category-game bg-white">
+          <%= cl_image_tag memory.photo.key, class: "img-card d-block w-100"%>
+
+          <div>
+            <p><%=  memory.legend %> </p>
+          </div>
+
+          <div>
+            <p>Ce souvenir est associé à la question :</p>
+            <%= memory.card.question %>
+          </div>
+
+        </div>
+
+    <% end %>
+  </div>
 </div>
-
-<h1> Souvenirs déjà utilisés  </h1>
-
-<div class="cards">
-  <% @used_memories.each do |memory| %>
-
-      <div class="card-category-game">
-        <%= cl_image_tag memory.photo.key, class: "img-card d-block w-100"%>
-
-        <div>
-          <p><%=  memory.legend %> </p>
-        </div>
-
-        <div>
-          <p>Ce souvenir est associé à la question :</p>
-          <%= memory.card.question %>
-        </div>
-
-      </div>
-
-  <% end %>
-</div>
-
 <%= render "shared/navbar" %>

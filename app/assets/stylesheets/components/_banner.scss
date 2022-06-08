@@ -9,3 +9,16 @@
   flex-direction: column;
   position: relative;
 }
+
+
+.grey-banner {
+  background-image: asset-url("back-grey.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
