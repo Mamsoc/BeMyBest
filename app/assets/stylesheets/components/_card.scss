@@ -21,6 +21,7 @@
     border-radius: 2px;
     max-height: 300px;
     border-radius: 15px;
+
   }
 
   .card-category-game{
@@ -150,20 +151,26 @@ margin: 30px 10px;
   // scenario
 
   .img-scenario-card {
-    max-width: 320px;
+    width: 320px;
+    height: 230px;
     object-fit: cover;
-    max-height: 231px;
     border-radius: 15px;
-
+    position: relative;
+    z-index: -1;
+    display: block;
   }
 
   .scenario-card {
     display: flex;
     align-items: center;
     grid-template-columns: 1fr;
-    max-width: 350px;
-    margin: 20px;
     justify-content: space-around !important;
+    margin: 10px;
+    width: 320px;
+    background-size: cover;
+    height: 230px;
+    border-radius: 15px;
+
   }
 
   .scenario-card > p {
@@ -171,6 +178,11 @@ margin: 30px 10px;
     color: white;
     font-size: 25px;
     font-weight: bold;
+  }
+
+  .backgroundlin {
+    border-radius: 15px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.5) 100%)
   }
 
 }
