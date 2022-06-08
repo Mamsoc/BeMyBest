@@ -136,4 +136,5 @@ users.each do |user|
     p n += 1
   end
 end
+
 puts "#{Memory.count} memories created"
