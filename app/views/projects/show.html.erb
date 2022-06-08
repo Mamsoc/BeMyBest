@@ -1,26 +1,37 @@
 
 
-<div class="container d-block my-2">
-  <h1 class="h1" > <%=  @project.title %> </h1>
+<div class="container d-block margin-show-project-photo">
   <div class="image_button">
-    <p> <%= cl_image_tag @project.photo.key, class: "w-100"%> </p>
-    <div class="background-show">
-      <%= link_to "Accéder aux photos", project_memories_path(@project), class: "btn btn-flat w-75 my-3"%> </p>
+    <div>
+      <p class="p"> <%= cl_image_tag @project.photo.key, class: "w-100 photo-project-id" %> </p>
+    </div>
+    <div class="card-project-relative margin-show-project">
+      <div>
+        <h1 class="h1" > <%=  @project.title %> </h1>
+      </div>
+      <div>
+        <p class="p" > <%=  @project.description %> </p>
+      </div>
+    </div>
+    <div class="picture-photo">
+      <%= link_to project_memories_path(@project), class: " h2 add-photo-show" do %>
+      <i class="fa-solid fa-camera-retro fs-2"></i>
+      <% end %>
     </div>
   </div>
+</div>
 
-  <%= link_to "personnaliser le jeu ", edit_project_path(@project), class: "btn btn-flat w-100"%> </p>
-
+<div class="container margin-show-list">
   <div class="accordion" id="accordionExample">
-  <div class="accordion-item">
+  <div class="accordion-item margin-show-clear">
     <h2 class="accordion-header" id="headingOne">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-        Partager
+        Récolte les souvenirs
       </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>Invites du monde</strong> pour récolter le plus de souvenirs!
+        <strong>Invite du monde</strong> pour récolter le plus de souvenirs !
         <div class="icon-link-project">
           <a class="icon_color" href="https://wa.me/?text=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/memories/new"><i class="fa-brands fa-whatsapp fa-sm"></i></a>
           <a class="icon_color" href="mailto:?subject=Participes au cadeau BMyBest&body=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/memories/new"><i class="fa-solid fa-envelope fa-sm"></i></a>
@@ -28,20 +39,23 @@
       </div>
     </div>
   </div>
-  <div class="accordion-item">
+  <div class="accordion-item margin-show-clear">
     <h2 class="accordion-header" id="headingTwo">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Finaliser
+        Le jeu est prêt ? Envoie-lui le lien !
       </button>
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>Tout est prêt?</strong>
-           Alors cest le moment d'envoyer son cadeau à <%= @project.besty_first_name %>
+        <strong>Tout est prêt ?</strong>
+           Alors c'est le moment d'envoyer son cadeau à <%= @project.besty_first_name %>
         <div class="icon-link-project">
           <a class="icon_color" href="https://wa.me/?text=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/games"><i class="fa-brands fa-whatsapp fa-sm"></i></a>
           <a class="icon_color" href="mailto:?subject=Participes au cadeau BMyBest&body=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/games"><i class="fa-solid fa-envelope fa-sm"></i></a>
         </div>
       </div>
     </div>
+  </div>
+  <div>
+    <%= link_to "Personnaliser le jeu ", edit_project_path(@project), class: "btn btn-flat w-100 margin-show-list-perso "%> </p>
   </div>
