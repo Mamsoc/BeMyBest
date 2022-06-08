@@ -1,10 +1,19 @@
 <div class="main-menu-bottom-dark">
   <div class="main-menu-bottom-dark-links">
 
+      <% favorite = Project.find_by(user_id: current_user.id, favorite: true) %>
+
+      <% if favorite.present? %>
+        <%= link_to project_path(favorite) do %>
+          <i class="fa-regular fa-heart main-menu-bottom-dark-picto"></i>
+        <% end %>
+      <% else %>
+        <a href="/projects"><i class="fa-solid fa-heart main-menu-bottom-dark-picto"></i></a>
+      <% end %>
       <%# <% favorite = @current_user_projects.find(favorite: true) %>
       <%# <a href="/projects/#{favorite}"><i class="fa-regular fa-heart main-menu-bottom-picto"></i></a> %>
       <%# ligne ci-dessous a supprimer après ajout du statut favoris sur projet %>
-      <a href="/projects"><i class="fa-regular fa-heart main-menu-bottom-dark-picto"></i></a>
+      <%# <a href="/projects"><i class="fa-regular fa-heart main-menu-bottom-dark-picto"></i></a> %>
 
       <a href="#"><i class="fa-regular fa-comment main-menu-bottom-dark-picto"></i></a>
 
