@@ -18,13 +18,11 @@
         <p class="p bg-white" > <%=  @project.description %> </p>
       </div>
     </div>
-    <div class="picture-photo">
-      <%= link_to project_memories_path(@project), class: " h2 add-photo-show" do %>
-      <% end %>
-    </div>
     <div class = "d-flex justify-content-center">
+    <%= link_to  new_project_memory_path(@project), class: " h2 add-photo-show" do %>
       <h1 class ="plus"> + </h1>
       <i class="fa-solid fa-camera-retro fa-3x bg-white mx-2"></i>
+     <% end %>
      </div>
   </div>
 
