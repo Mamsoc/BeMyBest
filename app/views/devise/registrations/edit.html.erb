@@ -1,12 +1,12 @@
 <h2><%= resource_name.to_s.humanize %></h2>
 
-<% if current_user.photo %>
-    <%= image_tag(current_user.photo, class: "user-photo") %>
+<% if current_user.photo.attached? %>
+    <%= cl_image_tag(current_user.photo.key, class: "user-photo") %>
   <% else %>
     <i class="fa-regular fa-user user-photo"></i>
 <% end %>
 
-<h3>Me déconnecter</h3>
+<h3 class="h3">Me déconnecter</h3>
 <br>
       <% if user_signed_in? %>
         <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
@@ -14,12 +14,12 @@
         <% end %>
       <% end %>
 
-<h3>Modifier mon compte</h3>
+<h3 class="h3">Modifier mon compte</h3>
 <br>
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div class="form-inputs p">
     <%= f.input :email, required: true, autofocus: true %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -27,7 +27,7 @@
     <% end %>
 
     <%= f.input :first_name,
-                hint: "laisser vide si tu ne souhaites pas modifier ton prénpm",
+                hint: "laisser vide si tu ne souhaites pas modifier ton prénom",
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "first_name" },
@@ -55,16 +55,16 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update", class: "w-100 btn btn-flat" %>
+    <%= f.button :submit, "Mettre à jour", class: "w-100 btn btn-flat" %>
   </div>
 <% end %>
 
 <h3>Supprimer mon compte</h3>
 <br>
 <div class="d-flex align-items-center">
-  <div>Unhappy?</div>
+  <div>Tu veux réellement nous quitter 🥺 ?</div>
   <br>
-  <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Suppression définitive de ton compte ?" }, method: :delete, class: "w-50 btn btn-flat" %>
+  <%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Confirmes-tu la suppression définitive de ton compte ?" }, method: :delete, class: "w-50 btn btn-flat" %>
 </div>
 <br>
 <%= link_to "Retour", :back %>

@@ -29,7 +29,7 @@
             <%= simple_form_for [@project, card_memory], html: {"data-turbo": false} do |f| %>
               <%= f.input :response, label: "Modifier la réponse :", label_html: { class: 'p' }, input_html: { class: 'p' }%>
               <div class= "d-flex justify-content-center">
-                <%= f.submit class: "btn btn-flat w-100", value: "Enregistrer votre réponse" %>
+                <%= f.submit class: "btn btn-flat w-100", value: "Enregistrer la réponse" %>
               </div>
             <% end %>
           </div>

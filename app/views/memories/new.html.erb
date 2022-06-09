@@ -1,14 +1,17 @@
 <div class="grey-banner">
   <div class="container my-2">
-    <% if current_user == @project.user %>
-      <h1 class="h1">Ajouter un nouveau souvenir ! </h1>
-    <% else %>
-      <h1 class="h1">Ajouter un nouveau souvenir !</h1>
-      <p class="p">Attention vous êtes limité à 3 souvenirs! choisissez bien !</p>
-    <% end %>
-    <%= render "form", memory: @memory %>
-    <%= link_to "Retour", project_memories_path(@project), :class => 'btn btn-flat', :style => 'margin-top: 20px' %>
-
-  <%= render "shared/navbar" %>
+  <% if current_user == @project.user %>
+    <h1 class="h1">Ajouter un nouveau souvenir ! </h1>
+  <% else %>
+    <h1 class="h1">Ajouter un nouveau souvenir !</h1>
+    <p class="p">Attention vous êtes limité à 3 souvenirs! choisissez bien !</p>
+  <% end %>
+  <%= render "form", memory: @memory %>
+    <div>
+      <%= link_to project_memories_path(@project) do %>
+      <i class="fa-solid fa-arrow-left-long marge-top-retour"></i>
+      <% end %>
+    </div>
+    <%= render "shared/navbar" %>
   </div>
 </div>
