@@ -1,13 +1,13 @@
 <div class="grey-banner">
-  <div class="container bg-white ">
-   <h1 class="h1"> A toi de jouer !</h1>
-    <div class="game-cards">
+  <div class="container">
+   <h1 class="h1 margin-show-list"> A toi de jouer !</h1>
+    <div class="game-cards bg-white">
       <p class= "$body-font p"> <%= @card.question %> ?</p>
       <%= cl_image_tag @memory.photo.key, class: "img-card d-block w-100"%>
-      <p class="$body-font h4"> <br> Réponse :</p>
+      <p class="$body-font h4 margin-show-list bg-white"> <br> Réponse :</p>
     </div>
     <div data-controller="hiddenbutton" data-hiddenbutton-response-value="<%=@memory.response%>">
-    <input type="text" data-hiddenbutton-target="input" data-action="keyup->hiddenbutton#responseTrue" class="input-field w-100">
+    <input type="text" data-hiddenbutton-target="input" data-action="keyup->hiddenbutton#responseTrue" class="input-field w-100 bg-white">
     <p> <br></p>
     <% if @next_card == nil %>
       <%=  link_to " 🎉 Surprise 🎉 ",   project_win_path(@project), "data-hiddenbutton-target": "button", class: "btn btn-flat w-100", style:"display: none"%>
