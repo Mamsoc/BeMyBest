@@ -52,6 +52,14 @@
     border-radius: 15px;
   }
 
+  .img-card-game {
+    padding: 10px;
+    max-width: 320px;
+    object-fit: cover;
+    max-height: 400px;
+    border-radius: 15px;
+  }
+
   .add-photo-show {
     font-family: $content;
     display: flex;
