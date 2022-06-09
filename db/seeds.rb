@@ -37,21 +37,27 @@ puts '6 cards created!'
 
 puts 'Creating users...'
 
-user1 = User.create(email: "antoine@bmybest.me", password: "antoine@bmybest.me")
-user2 = User.create(email: "marion@bmybest.me", password: "marion@bmybest.me")
+user1 = User.create(email: "antoine@bmybest.me", password: "antoine@bmybest.me", first_name: "Antoine")
+photo_user1 = File.open(Rails.root.join("app/assets/images/img_seed/users/antoine.jpg"))
+user1.photo.attach(io: photo_user1, filename: "antoine.jpg", content_type: "image/jpg")
+user1.save
+user2 = User.create(email: "marion@bmybest.me", password: "marion@bmybest.me", first_name: "Marion")
+photo_user2 = File.open(Rails.root.join("app/assets/images/img_seed/users/marion.jpg"))
+user2.photo.attach(io: photo_user2, filename: "marion.jpg", content_type: "image/jpg")
+user2.save
 users = User.all
-puts '5 users created!'
+puts '2 users created!'
 
 puts 'Creating projects...'
-project = Project.create(title: "Anniversaire de Lucile", description: "yeay c'est l'anniv de Lucile preparons-lui une surprise", user: user1, scenario: scenario1)
-project2 = Project.create(title: "Anniversaire d'Elodie", description: "25 ans Elodie", user: user2, scenario: scenario1)
+project = Project.create(title: "Anniversaire de Lucile", description: "yeay c'est l'anniv de Lucile preparons-lui une surprise", user: user1, scenario: scenario1, besty_first_name: "Lucile")
+project2 = Project.create(title: "Anniversaire d'Elodie", description: "25 ans Elodie", user: user2, scenario: scenario1, besty_first_name: "Élodie")
 img_project = File.open(Rails.root.join("app/assets/images/img_seed/Lucile.jpg"))
 img_project2 = File.open(Rails.root.join("app/assets/images/img_seed/elodie1.JPG"))
 project.photo.attach(io: img_project, filename: "Lucile.jpg", content_type: "image/jpg")
 project.save
 project2.photo.attach(io: img_project2, filename: "elodie1.jpg", content_type: "image/JPG")
 project2.save
-puts '1 project created!'
+puts '2 projects created!'
 
 
 puts 'Creating invitations...'
@@ -64,28 +70,28 @@ users.each do |user|
 end
 puts "#{i} invitations created"
 
-puts 'Creating memories. antoine..'
+puts 'Creating memories for Antoine..'
 n = 1
 users.each do |user|
-  2.times do
-    memory = Memory.new(legend: "légende #{n}", response: "a", user: user, project: project)
+  5.times do
+    memory = Memory.new(legend: "Un super moment avec Antoine ! #{n}", response: "...", user: user, project: project)
     file = File.open(Rails.root.join("app/assets/images/img_seed/memory#{n}_photo.jpg"))
     memory.photo.attach(io: file, filename: "memory#{n}_photo.jpg", content_type: "image/jpg")
+    memory.save
+    p n += 1
   end
 end
 puts "#{Memory.count} memories created"
 
-puts 'Creating memories. Elodie..'
-
+puts 'Creating memories for Elodie..'
 n = 1
 users.each do |user|
-  2.times do
-    memory2 = Memory.new(legend: "légende #{n}", response: "a", user: user2, project: project2)
+  5.times do
+    memory2 = Memory.new(legend: "un super moment avec Élodie ! #{n}", response: "...", user: user2, project: project2)
     file = File.open(Rails.root.join("app/assets/images/img_seed/elodie#{n}.JPG"))
     memory2.photo.attach(io: file, filename: "elodie#{n}.JPG", content_type: "image/JPG")
     memory2.save
     p n += 1
   end
 end
-
 puts "#{Memory.count} memories created"
