@@ -1,16 +1,18 @@
 <div class="container">
   <br>
-  <h2>Log in</h2>
+  <h2 class="h1 text-center">Connexion</h2>
 <br>
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-    <div class="form-inputs">
+    <div class="form-inputs h3">
       <%= f.input :email,
+                  label: "Email",
                   required: false,
                   autofocus: true,
                   input_html: { autocomplete: "email" },
                   input_html: { class: 'input-field' }  %>
 
       <%= f.input :password,
+                  label: "Mot de passe",
                   required: false,
                   input_html: { autocomplete: "current-password" },
                   input_html: { class: 'input-field' }  %>
@@ -18,11 +20,11 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log in", class: "w-100 btn btn-flat" %>
+      <%= f.button :submit, "Me connecter", class: "w-100 btn btn-flat" %>
     </div>
   <% end %>
-  <br><br><br><br>
-  <div class="d-flex justify-content-between">
+
+  <div class="d-flex justify-content-between mt-5">
   <%= render "devise/shared/links" %>
   </div>
  </div>

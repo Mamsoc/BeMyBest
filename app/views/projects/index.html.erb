@@ -1,51 +1,62 @@
-<div class="container mt-5">
-  <h1 class="bienvenue"> Bienvenue <%= @current_user.first_name %> 👋 </h1>
+<div class="grey-banner">
 
-  <p class="h3 mt-4 mb-4"> Un de tes amis fête bientôt son anniversaire ? <br>
-  Offre-lui une expérience unique avec BE MY BEST ! </p>
+  <div class="container mt-5">
+    
+    <h1 class="bienvenue"> Bienvenue <%= @current_user.first_name %> 👋 </h1>
+
+    <p class="h3 mt-4 mb-4"> Un de tes amis fête bientôt son anniversaire ? <br>
+    Offre-lui une expérience unique avec BE MY BEST ! </p>
 
 
-  <% if @current_user_projects.empty? %>
+    <% if @current_user_projects.empty? %>
+      <p class="p"><%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100"%></p>
+    
+    <% else %>
+      <%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100 my-2"%>
+    
+      <div class="my-4">
+        <h2 class= "m-3 h1"> <i class="fa-solid fa-puzzle-piece"></i> Mes jeux : </h2>
+      </div>
 
-    <p class="p"><%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100"%></p>
-  <% else %>
-    <%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100 my-2"%>
-    <div class="my-4">
-      <h2 class= "m-3 h1"> <i class="fa-solid fa-puzzle-piece"></i> Mes jeux : </h2>
-    </div>
+      <div class="cards" data-controller="favorite">
+        <% @current_user_projects.each do |project| %>
+          <div class="card-category d-block m-3">
 
-    <div class="cards" data-controller="favorite">
-      <% @current_user_projects.each do |project| %>
-        <div class="card-category d-block m-3">
+            <%= link_to project_path(project) do %>
 
-          <%= link_to project_path(project) do %>
+              <div>
 
-            <div>
-
-              <% if project.favorite %>
-                  <i class="fa-solid fa-heart card-project-favorite" data-action="click->favorite#fav" data-favorite-project-id-param="<%= project.id %>" ></i>
-              <% else %>
-                  <i class="fa-regular fa-heart card-project-favorite" data-action="click->favorite#fav" data-favorite-project-id-param="<%= project.id %>"></i>
-              <% end %>
-
-              <% if project.photo.attached? %>
-                <%= cl_image_tag project.photo.key, class: "img-card d-block w-100"%>
-                  <%= link_to project_path(project), data: {turbo_method: :delete, turbo_confirm: "Confirmes-tu la suppression de ce projet ?"} do %>
-                  <i class="fa-solid fa-trash card-project-trash"></i>
+                <% if project.favorite %>
+                    <i class="fa-solid fa-heart card-project-favorite" data-action="click->favorite#fav" data-favorite-project-id-param="<%= project.id %>" ></i>
+                <% else %>
+                    <i class="fa-regular fa-heart card-project-favorite" data-action="click->favorite#fav" data-favorite-project-id-param="<%= project.id %>"></i>
                 <% end %>
-              <% end %>
 
-            </div>
+                <% if project.photo.attached? %>
+                  <%= cl_image_tag project.photo.key, class: "img-card d-block w-100"%>
+                    <%= link_to project_path(project), data: {turbo_method: :delete, turbo_confirm: "Confirmes-tu la suppression de ce projet ?"} do %>
+                      <i class="fa-solid fa-trash card-project-trash"></i>
+                    <% end %>
+                <% end %>
 
-            <div class="card-project-relative card-description-p">
-              <h2 class="h2"> <%= project.title %> </h2>
-              <p class="p">  <%= project.description.length > 25 ? "#{project.description.first(25)}..." : project.description %></p>
-            </div>
+              </div>
 
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+              <div class="card-project-relative card-description-p">
+                <h2 class="h2"> <%= project.title %> </h2>
+                <p class="p">  <%= project.description.length > 25 ? "#{project.description.first(25)}..." : project.description %></p>
+              </div>
+            
+            <% end %>
+            
+          </div>
+        
+        <% end %>
+        
+      </div>
+    
+    <% end %>
+    
+  </div>    
 </div>
+  
 <%= render "shared/navbar_dark" %>

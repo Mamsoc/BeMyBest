@@ -3,12 +3,14 @@
   background-image: asset-url("home-back.png");
   background-size: cover;
   background-position: center;
-  height: 125vh;
+  height: 100vh;
   color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
   position: relative;
+  background-position: fixed;
+  margin-top: 0;
 }
 .banner-h1{
   position: absolute;

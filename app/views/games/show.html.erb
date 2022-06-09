@@ -1,21 +1,19 @@
-<div class="container">
-  <br>
-  <h1 class="$h1-font"> Jouons !</h1>
-  <div class="game-cards">
-    <p class= "$body-font"> <%= @card.question %></p>
-    <%= cl_image_tag @memory.photo.key, class: "img-card d-block w-100"%>
-    <p class="$body-font"> <br> Votre réponse :</p>
-
-</div>
-  <div data-controller="hiddenbutton" data-hiddenbutton-response-value="<%=@memory.response%>">
+<div class="grey-banner">
+  <div class="container bg-white ">
+   <h1 class="$h1-font"> Jouons !</h1>
+    <div class="game-cards">
+      <p class= "$body-font"> <%= @card.question %></p>
+      <%= cl_image_tag @memory.photo.key, class: "img-card d-block w-100"%>
+      <p class="$body-font"> <br> Votre réponse :</p>
+    </div>
+    <div data-controller="hiddenbutton" data-hiddenbutton-response-value="<%=@memory.response%>">
     <input type="text" data-hiddenbutton-target="input" data-action="keyup->hiddenbutton#responseTrue" class="input-field w-100">
     <p> <br></p>
     <% if @next_card == nil %>
-      <%=  link_to "finish",   project_win_path(@project), "data-hiddenbutton-target": "button", class: "btn btn-flat w-100", style:"display: none"%>
+      <%=  link_to " 🎉 Surprise 🎉 ",   project_win_path(@project), "data-hiddenbutton-target": "button", class: "btn btn-flat w-100", style:"display: none"%>
     <% else %>
-      <%=  link_to "Next question",  project_game_path(@project, @next_card), "data-hiddenbutton-target": "button", class: "btn btn-flat w-100", style:"display: none"%>
+      <%=  link_to "Question suivante",  project_game_path(@project, @next_card), "data-hiddenbutton-target": "button", class: "btn btn-flat w-100", style:"display: none"%>
     <% end %>
-
-  </div>
-
+    </div>
+   </div>
 </div>
