@@ -6,7 +6,11 @@
     <p class="p">Attention vous êtes limité à 3 souvenirs! choisissez bien !</p>
   <% end %>
   <%= render "form", memory: @memory %>
-  <%= link_to "Retour", project_memories_path(@project), :class => 'btn btn-flat', :style => 'margin-top: 20px' %>
+  <div>
+    <%= link_to project_memories_path(@project) do %>
+    <i class="fa-solid fa-arrow-left-long marge-top-retour"></i>
+    <% end %>
+  </div>
 
 <%= render "shared/navbar" %>
 </div>
