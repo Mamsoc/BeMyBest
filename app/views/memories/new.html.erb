@@ -1,7 +1,7 @@
 <div class="grey-banner">
   <div class="container my-2">
     <% if current_user == @project.user %>
-      <h1 class="h1">Ajouter un nouveau souvenir ! </h1>
+      <h1 class="h1 bg-white margin-top-card">Ajouter un nouveau souvenir ! </h1>
     <% else %>
       <h1 class="h1">Ajouter un nouveau souvenir !</h1>
       <p class="p">Attention vous êtes limité à 3 souvenirs! choisissez bien !</p>
@@ -15,4 +15,3 @@
   </div>
 </div>
 <%= render "shared/navbar" %>
-

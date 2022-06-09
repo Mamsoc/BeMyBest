@@ -22,6 +22,24 @@
 padding: 25px;
 }
 
+.banner-btn{
+  font-family: $h1-font;
+  font-size: 20px;
+  padding-top: 60px;
+  position: absolute;
+  color: $title_logo;
+  text-decoration: none;
+  top: 450px;
+  right: 110px;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  box-shadow: 12px 12px 24px #092753;
+  transition: all 0.6s ease-in-out 0s;
+  background: $subTitle_button_picto;
+}
+
+
 
 .line-1{
   position: relative;
