@@ -1,6 +1,6 @@
 <div class="grey-banner container">
   <h1 class="h1 bg-white mt-3"> Souvenirs disponibles  </h1>
-  <p><%= @card.question %></p>
+  <p class="p bg-white"><%= @card.question "?" %></p>
 
   <div class="cards">
     <% @available_memories.each do |memory| %>
@@ -18,7 +18,7 @@
               <% if @card_memory %>
                 <%= f.hidden_field :response, value: @card_memory.response %>
               <% end %>
-              <%= f.submit class: "btn btn-flat"  %>
+              <%= f.submit class: "btn btn-flat", value: "Compléter le souvenir"  %>
             <% end %>
           </div>
 
@@ -27,7 +27,7 @@
     <% end %>
   </div>
 
-  <h1> Souvenirs déjà utilisés  </h1>
+  <h1 class="h1"> Souvenirs déjà utilisés </h1>
 
   <div class="cards">
     <% @used_memories.each do |memory| %>
@@ -40,8 +40,8 @@
           </div>
 
           <div>
-            <p>Ce souvenir est associé à la question :</p>
-            <%= memory.card.question %>
+            <p class="p">Ce souvenir est associé à la question :</p>
+            <%= memory.card.question%>
           </div>
 
         </div>
