@@ -1,12 +1,12 @@
 <div class="container">
 <br>
-  <h2 class= "$h2-font">Sign up</h2>
+  <h2 class= "$h2-font margin-top-card h1 text-center">Inscription</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
     <%= f.error_notification %>
 
 
-    <div class="form-inputs">
+    <div class="form-inputs h3">
       <%= f.input :first_name,
                   label: "Prénom",
                   required: true,
@@ -26,7 +26,7 @@
       <%= f.input :password,
                   label: "Mot de passe",
                   required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" },
                   input_html: { class: 'input-field' } %>
       <%= f.input :password_confirmation,
