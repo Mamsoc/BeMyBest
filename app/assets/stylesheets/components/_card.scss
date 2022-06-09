@@ -127,13 +127,12 @@ margin: 20px 10px;
   }
 
   .card-project-trash {
-    color: red;
-    position: absolute;
-    margin-left: 276px;
-    margin-top: -42px;
+    color: $title_logo;
     border-radius: 5px;
     background-color: white;
-    padding: 5px;
+    padding-top: 10px;
+    padding-right: 1px;
+    font-size: 3vh;
   }
 
   .card-game-edit {
@@ -146,9 +145,7 @@ margin: 20px 10px;
 
   .card-project-favorite{
     color: $title_logo;
-    position: absolute;
-    margin-left: 280px;
-    margin-top: 10px;
+    font-style: none;
     font-size: 3vh;
   }
 
