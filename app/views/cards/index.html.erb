@@ -31,8 +31,9 @@
             <% end %>
           </div>
         <% else %>
-          <div class= "d-flex justify-content-center" >
-            <%= link_to "Choisir un souvenir", project_card_path(@project, card), class: "btn btn-flat"%>
+          <div class= "d-block " >
+          <h3 class="h3 text-justify"> <%= card.question %> ? </h3>
+            <%= link_to "Choisir un souvenir", project_card_path(@project, card), class: "btn btn-flat w-100"%>
           </div>
         <% end %>
       </div>
