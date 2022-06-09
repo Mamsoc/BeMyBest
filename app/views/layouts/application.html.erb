@@ -17,7 +17,7 @@
   <body>
   <%# <%= render "shared/navbar" %>
   <%= render "shared/flashes" %>
-    <div class="content-wrapper">
+    <div class="content-wrapper <%= "game-wrapper" if controller_name == "games" && action_name == "index" %>">
       <%= yield %>
     </div>
   <%#= render "shared/footer" %>

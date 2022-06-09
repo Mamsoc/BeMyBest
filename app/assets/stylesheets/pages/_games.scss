@@ -1,21 +1,24 @@
 .index_btn{
   display: flex;
-    justify-content: center;
-    border-radius: 50%;
-    height: 200px;
-    width: 200px;
-    background-color: $subTitle_button_picto;
-    border: $title_logo 5px solid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  background: linear-gradient(90deg, rgb(229, 236, 235) 0%, rgb(243, 247, 246) 100%);
+  box-shadow: 12px 12px 24px #092753;
+  transition: all 0.3s ease-in-out 0s;
 }
+
 .a_btn{
-  padding-top: 62px;
   text-decoration: none;
   font-family: $h1-font;
-  font-size: 43px;
+  font-size: 36px;
   color: $title_logo;
+  font-weight: 100;
+  font-style: italic;
 }
 .center_btn{
-  padding-top: 170px;
   margin: 0 auto;
   width: 200px;
 }
@@ -27,5 +30,70 @@
   .congrats_gif{
     height: 40%;
     width: 100vw;
+  }
+}
+.game-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #2c3b89;
+  align-items: center;
+  background-image: asset-url("home-back.png");
+  background-size: cover;
+  background-position: top;
+  background-size: 100vh;
+}
+
+.index_btn::before {
+content: '';
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid #00FFCB;
+  box-shadow: 0 0 60px rgba(0,255,203,.64);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all .3s ease-in-out 0s;
+}
+
+.index_btn:hover, .index_btn:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+
+.index_btn:hover::before, .index_btn:focus::before {
+  opacity: 1;
+}
+
+.index_btn::after {
+  content: '';
+  width: 200px; height: 200px;
+  border-radius: 100%;
+  border: 6px solid #f6f9f8;
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+
+.index_btn:hover::after, .index_btn:focus::after {
+  animation: none;
+  display: none;
+}
+@keyframes ring {
+  0% {
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+  }
+  100% {
+    width: 350px;
+    height: 350px;
+    opacity: 0;
   }
 }
