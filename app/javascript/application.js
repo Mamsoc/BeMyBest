@@ -3,3 +3,9 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 import 'js-confetti'
+
+if(document.querySelector(".alert")) {
+  setTimeout(() => {
+    document.querySelector(".alert").style.display="none"
+  }, 1000);
+}
