@@ -1,18 +1,23 @@
-<div class="container mt-5 my-2 h3">
+<div class=" mt-5 my-2 h3">
 
-<p> <br></p>
-
+<p></p>
+  <div class ="bg-white
   <%= simple_form_for(project) do |f| %>
-    <%= f.input :title, label: "Titre du jeu : ",  input_html: { class: 'input-field' } %>
+    <div class ="bg-white mt-3 mb-3">
+      <%= f.input :title, label: "Titre du jeu : ",  input_html: { class: 'input-field bg-white' } %>
+    </div>
+    <div class ="mb-3">
+      <%= f.input :besty_first_name, label: "Pour qui crées-tu ce jeu ? ",  input_html: { class: 'input-field bg-white' } %>
+    </div>
+    <div class =" mb-3">
+      <%= f.input :description, label: "Description du jeu : ", input_html: { class: 'input-field bg-white' }  %>
+    </div>
+    <div class =" mb-3">
+    <%= f.input :photo, as: :file, label: "Photo du jeu :", input_html: { class: 'fileinput-button bg-white' } %>
     <p> <br></p>
-    <%= f.input :besty_first_name, label: "Pour qui crées-tu ce jeu ? ",  input_html: { class: 'input-field' } %>
-    <p> <br></p>
-    <%= f.input :description, label: "Description du jeu : ", input_html: { class: 'input-field' }  %>
-    <p> <br></p>
-    <%= f.input :photo, as: :file, label: "Photo du jeu :", input_html: { class: 'fileinput-button ' } %>
-    <p> <br></p>
-    <div class="mt-5">
+    <div class="mt-2">
       <%= f.submit class: "w-100 btn btn-flat",  value: "Créer ton jeu"%>
     </div>
   <% end %>
+  </div>
 </div>

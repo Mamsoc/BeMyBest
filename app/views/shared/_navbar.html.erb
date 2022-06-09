@@ -1,16 +1,24 @@
 <div class="main-menu-bottom">
   <div class="main-menu-bottom-links">
 
-      <%# <% favorite = @current_user_projects.find(favorite: true) %>
-      <%# <a href="/projects/#{favorite}"><i class="fa-regular fa-heart main-menu-bottom-picto"></i></a> %>
+      <% favorite = Project.find_by(user_id: current_user.id, favorite: true) %>
+
+      <% if favorite.present? %>
+        <%= link_to project_path(favorite) do %>
+          <i class="fa-regular fa-heart main-menu-bottom-picto"></i>
+        <% end %>
+      <% else %>
+        <a href="/projects"><i class="fa-solid fa-heart main-menu-bottom-picto"></i></a>
+      <% end %>
       <%# ligne ci-dessous a supprimer après ajout du statut favoris sur projet %>
-      <a href="/projects"><i class="fa-regular fa-heart main-menu-bottom-picto"></i></a>
+      <%# <a href="/projects"><i class="fa-regular fa-heart main-menu-bottom-picto"></i></a> %>
 
       <a href="#"><i class="fa-regular fa-comment main-menu-bottom-picto"></i></a>
 
       <a href="/projects" class="main-menu-bottom-logo"></a>
 
-      <a href="#"><i class="fa-regular fa-circle-question main-menu-bottom-picto"></i></a>
+
+      <a href="mailto:contact@bmybest.me?subject=BeMyBest ♡ Question de <%= @current_user.first_name %>&body= Bonjour <%= @current_user.first_name %>, comment pouvons-nous t'aider ?"><i class="fa-regular fa-circle-question main-menu-bottom-picto"></i></a>
 
       <% if user_signed_in? %>
         <a href="/users/edit"><i class="fa-regular fa-user main-menu-bottom-picto"></i></a>
