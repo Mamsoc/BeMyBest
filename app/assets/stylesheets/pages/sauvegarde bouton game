@@ -12,12 +12,26 @@
 
 .a_btn{
   text-decoration: none;
+  font-family: $h1-font;
+  font-size: 36px;
+  color: $title_logo;
+  font-weight: 100;
+  font-style: italic;
 }
 .center_btn{
   margin: 0 auto;
   width: 200px;
 }
 
+.congrats-centered{
+  min-height: calc(100vh - 80px - 80px);
+  display: flex;
+  align-items: center;
+  .congrats_gif{
+    height: 40%;
+    width: 100vw;
+  }
+}
 .game-wrapper {
   min-height: 100vh;
   display: flex;

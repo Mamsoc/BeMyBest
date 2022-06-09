@@ -1,21 +1,22 @@
 <div class="container">
-  <h1 class="h1"> Votre profil</h1>
-  <h2 class="h2">Bonjour <%= current_user.first_name %></h2>
 
-  <div class="d-flex">
-    <% if current_user.photo.attached? %>
-        <%= cl_image_tag(current_user.photo.key, class: "user-photo img-card") %>
-      <% else %>
-        <i class="fa-regular fa-user user-photo"></i>
-    <% end %>
-    <div class="d-block">
-      <h2 class="h2 mb-2">Me déconnecter :</h2>
+  <div class="d-flex justify-content-between mt-3">
+    <h2 class="h2">Bonjour <%= current_user.first_name %></h2>
       <% if user_signed_in? %>
         <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
-        <i class="fa-solid fa-power-off button-navbar "></i>
+        <i class="fa-solid fa-power-off button-navbar mx-3 fa-3x icon-color"></i>
         <% end %>
       <% end %>
     </div>
+
+  <div class="d-flex">
+    <% if current_user.photo.attached? %>
+        <%= cl_image_tag(current_user.photo.key, class: "img-card") %>
+      <% else %>
+        <i class="fa-regular fa-user user-photo"></i>
+    <% end %>
+
+
   </div>
 
   <h2 class="h2 mt-1">Modifier mon compte</h2>
