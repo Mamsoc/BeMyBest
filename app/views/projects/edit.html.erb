@@ -1,6 +1,6 @@
 
 <div class="container ">
-  <h1 class= "h1 mx-4 mt-3"> Scenarios </h1>
+  <h1 class= "h1 mx-4 mt-3 text-center"> Choisis un jeu </h1>
   <div class="cards">
     <%= form_with url: project_path(@project), method: :patch, html: { turbo: false} do |form|%>
     <input type="hidden" name="_method" value="patch">
@@ -15,7 +15,7 @@
       </div>
       </label>
       <% end  %>
-    <button type="submit" class="btn btn-flat p w-100 mt-3"> Valider </button>
+    <button type="submit" class="btn btn-flat w-100 mt-3"> Valider </button>
     <% end %>
 
   </div>

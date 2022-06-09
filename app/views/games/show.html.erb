@@ -1,10 +1,10 @@
 <div class="grey-banner">
   <div class="container bg-white ">
-   <h1 class="$h1-font"> Jouons !</h1>
+   <h1 class="h1"> A toi de jouer !</h1>
     <div class="game-cards">
-      <p class= "$body-font"> <%= @card.question %></p>
+      <p class= "$body-font p"> <%= @card.question %> ?</p>
       <%= cl_image_tag @memory.photo.key, class: "img-card d-block w-100"%>
-      <p class="$body-font"> <br> Votre réponse :</p>
+      <p class="$body-font h4"> <br> Réponse :</p>
     </div>
     <div data-controller="hiddenbutton" data-hiddenbutton-response-value="<%=@memory.response%>">
     <input type="text" data-hiddenbutton-target="input" data-action="keyup->hiddenbutton#responseTrue" class="input-field w-100">
