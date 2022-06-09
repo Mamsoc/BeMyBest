@@ -2,16 +2,16 @@
 
   <div class="container mt-5">
     <h1 class="bienvenue bg-white"> Bienvenue <%= @current_user.first_name %> 👋 </h1>
-
     <p class="h3 mt-4 mb-4"> Un de tes amis fête bientôt son anniversaire ? <br>
     Offre-lui une expérience unique avec BE MY BEST ! </p>
 
 
     <% if @current_user_projects.empty? %>
-
       <p class="p"><%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100"%></p>
+    
     <% else %>
       <%= link_to "Créer un nouveau jeu 🎨", new_project_path, class: "btn btn-flat w-100 my-2"%>
+    
       <div class="my-4">
         <h2 class= "m-3 h1"> <i class="fa-solid fa-puzzle-piece"></i> Mes jeux : </h2>
       </div>
@@ -33,8 +33,8 @@
                 <% if project.photo.attached? %>
                   <%= cl_image_tag project.photo.key, class: "img-card d-block w-100"%>
                     <%= link_to project_path(project), data: {turbo_method: :delete, turbo_confirm: "Confirmes-tu la suppression de ce projet ?"} do %>
-                    <i class="fa-solid fa-trash card-project-trash"></i>
-                  <% end %>
+                      <i class="fa-solid fa-trash card-project-trash"></i>
+                    <% end %>
                 <% end %>
 
               </div>
@@ -43,12 +43,18 @@
                 <h2 class="h2"> <%= project.title %> </h2>
                 <p class="p">  <%= project.description.length > 25 ? "#{project.description.first(25)}..." : project.description %></p>
               </div>
-
+            
             <% end %>
+            
           </div>
+        
         <% end %>
+        
       </div>
+    
     <% end %>
-    <%= render "shared/navbar" %>
-  </div>
+    
+  </div>    
 </div>
+  
+<%= render "shared/navbar_dark" %>
