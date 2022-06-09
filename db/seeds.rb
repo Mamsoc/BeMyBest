@@ -20,10 +20,10 @@ p "destroy scenarios"
 Scenario.destroy_all
 
 puts 'Creating scenarios...'
-scenario1 = Scenario.create!(title: "Quizz", img: "anniversaire.jpg")
-scenario2 = Scenario.create!(title: "", img: "RPUW_logo.jpg")
-scenario3 = Scenario.create!(title: "Je n'ai jamais", img: "evjf.jpg")
-scenario4 = Scenario.create!(title: "Escape Game", img: "mariages.jpg")
+scenario1 = Scenario.create!(title: "Quizz", img: "Quizz.png")
+scenario2 = Scenario.create!(title: "", img: "RPUW_logo.png")
+scenario3 = Scenario.create!(title: "Je n'ai jamais", img: "Je_nai_jamais.jpg")
+scenario4 = Scenario.create!(title: "Escape Game", img: "Unlock.png")
 puts '4 scenarios created!'
 
 puts 'Creating cards...'
