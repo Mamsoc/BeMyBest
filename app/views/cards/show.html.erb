@@ -4,14 +4,11 @@
 
   <div class="cards">
     <% @available_memories.each do |memory| %>
-
         <div class="card-category-game bg-white">
-          <%= cl_image_tag memory.photo.key, class: "img-card d-block w-100"%>
-
+          <%= cl_image_tag memory.photo.key , class: "img-card d-block w-100"%>
           <div>
             <p class="h4"><%=  memory.legend %> </p>
           </div>
-
           <div>
             <%= simple_form_for [@project, memory], html: {"data-turbo": false} do |f| %>
               <%= f.hidden_field :card_id, value: @card.id %>
@@ -21,9 +18,7 @@
               <%= f.submit class: "btn btn-flat", value: "Compléter le souvenir"  %>
             <% end %>
           </div>
-
         </div>
-
     <% end %>
   </div>
 
@@ -34,6 +29,7 @@
 
         <div class="card-category-game bg-white">
           <%= cl_image_tag memory.photo.key, class: "img-card d-block w-100"%>
+
 
           <div>
             <p><%=  memory.legend %> </p>

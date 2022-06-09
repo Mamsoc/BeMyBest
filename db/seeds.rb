@@ -63,7 +63,7 @@ project.photo.attach(io: img_project, filename: "Lucile.jpg", content_type: "ima
 project.save
 
 project2 = Project.create(title: "Anniversaire d'Elodie", description: "25 ans Elodie", user: user2, scenario: scenario1, besty_first_name: "Élodie")
-img_project2 = File.open(Rails.root.join("app/assets/images/img_seed/elodie1.JPG"))
+img_project2 = File.open(Rails.root.join("app/assets/images/img_seed/elodie_projet.JPG"))
 project2.photo.attach(io: img_project2, filename: "elodie_projet.jpg", content_type: "image/JPG")
 project2.save
 
