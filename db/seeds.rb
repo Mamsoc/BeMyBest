@@ -20,10 +20,11 @@ p "destroy scenarios"
 Scenario.destroy_all
 
 puts 'Creating scenarios...'
-scenario1 = Scenario.create!(title: "Anniversaire", img: "anniversaire.jpg")
-scenario2 = Scenario.create!(title: "EVJF", img: "evjf.jpg")
-scenario3 = Scenario.create!(title: "mariages", img: "mariages.jpg")
-puts '3 scenarios created!'
+scenario1 = Scenario.create!(title: "Quizz", img: "anniversaire.jpg")
+scenario4 = Scenario.create!(title: "Une requête pour un Winner", img: "mariages.jpg")
+scenario2 = Scenario.create!(title: "Je n'ai jamais", img: "evjf.jpg")
+scenario3 = Scenario.create!(title: "Escape Game", img: "mariages.jpg")
+puts '4 scenarios created!'
 
 puts 'Creating cards...'
 card1 = Card.create(title: "parents", question: "En quelle année est née ta soeur", scenario: scenario1)
@@ -32,14 +33,12 @@ card3= Card.create(title: "amis", question: "qui est ta meilleure amie", scenari
 card4= Card.create(title: "passion", question: "quelle est ta passion", scenario: scenario1)
 card5= Card.create(title: "passion", question: "Ton plus beau voyage", scenario: scenario1)
 card6= Card.create(title: "passion", question: "En quelle année as-tu étais diplomée", scenario: scenario1)
-puts '3 cards created!'
+puts '6 cards created!'
 
 puts 'Creating users...'
 
-user1 = User.create(email: "antoine@example.com", password: "antoine@example.com")
-user2 = User.create(email: "marie@example.com", password: "marie@example.com")
-user4 = User.create(email: "lidwine@example.com", password: "lidwine@example.com")
-user5 = User.create(email: "hadrien@example.com", password: "hadrien@example.com")
+user1 = User.create(email: "antoine@bmybest.me", password: "antoine@bmybest.me")
+user2 = User.create(email: "marion@bmybest.me", password: "marion@bmybest.me")
 users = User.all
 puts '5 users created!'
 
