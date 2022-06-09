@@ -1,3 +1,10 @@
+<style>
+  i, a{
+ text-decoration:  none;
+ color:#2c3a89;
+}
+</style>
+
 <div class="grey-banner">
   <div class="image_button">
     <div>
@@ -13,16 +20,17 @@
     </div>
     <div class="picture-photo">
       <%= link_to project_memories_path(@project), class: " h2 add-photo-show" do %>
-      <i class="fa-solid fa-camera-retro fs-2"></i>
       <% end %>
     </div>
+    <div class = "d-flex justify-content-center">
+      <h1 class ="plus"> + </h1>
+      <i class="fa-solid fa-camera-retro fa-3x bg-white mx-2"></i>
+     </div>
   </div>
 
-
-
-  <div class="container margin-show-list">
+  <div class="container mt-2">
     <div class="accordion" id="accordionExample">
-    <div class="accordion-item margin-show-clear">
+    <div class="accordion-item mx-2">
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button collapsed h3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
           Récolte les souvenirs
@@ -32,13 +40,13 @@
         <div class="accordion-body p">
           <strong>Invite du monde</strong> pour récolter le plus de souvenirs !
           <div class="icon-link-project">
-            <a class="icon_color" href="https://wa.me/?text=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/memories/new"><i class="fa-brands fa-whatsapp fa-sm"></i></a>
-            <a class="icon_color" href="mailto:?subject=Participes au cadeau BMyBest&body=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/memories/new"><i class="fa-solid fa-envelope fa-sm"></i></a>
+            <a href="https://wa.me/?text=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/memories/new"><i class="fa-brands fa-whatsapp fa-sm"></i></a>
+            <a href="mailto:?subject=Participes au cadeau BMyBest&body=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/memories/new"><i class="fa-solid fa-envelope fa-sm"></i></a>
           </div>
         </div>
       </div>
     </div>
-    <div class="accordion-item margin-show-clear">
+    <div class="accordion-item mx-2">
       <h2 class="accordion-header" id="headingTwo">
         <button class="accordion-button collapsed h3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
           Le jeu est prêt ? Envoie-lui le lien !
@@ -49,14 +57,16 @@
           <strong>Tout est prêt ?</strong>
             Alors c'est le moment d'envoyer son cadeau à <%= @project.besty_first_name %>
           <div class="icon-link-project">
-            <a class="icon_color" href="https://wa.me/?text=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/games"><i class="fa-brands fa-whatsapp fa-sm"></i></a>
-            <a class="icon_color" href="mailto:?subject=Participes au cadeau BMyBest&body=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/games"><i class="fa-solid fa-envelope fa-sm"></i></a>
+            <a href="https://wa.me/?text=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/games"><i class="fa-brands fa-whatsapp fa-sm"></i></a>
+            <a href="mailto:?subject=Participes au cadeau BMyBest&body=click%20sur%20ce%20lien%20pour%20participer%20http://www.bmybest.me//projects/<%= @project.id %>/games"><i class="fa-solid fa-envelope fa-sm"></i></a>
           </div>
         </div>
       </div>
     </div>
     <div>
-      <%= link_to "Personnaliser le jeu ", edit_project_path(@project), class: "btn btn-flat w-100 margin-show-list-perso "%> </p>
+      <%= link_to "Personnaliser le jeu ", edit_project_path(@project), class: "btn btn-flat w-100 mt-5 "%> </p>
     </div>
+  </div>
 </div>
+
 <%= render "shared/navbar_dark" %>
