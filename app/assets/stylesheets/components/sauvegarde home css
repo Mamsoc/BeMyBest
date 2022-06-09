@@ -1,0 +1,60 @@
+
+.home-banner {
+  background-image: asset-url("home-back.png");
+  background-size: cover;
+  background-position: center;
+  height: 125vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.banner-h1{
+  position: absolute;
+  top: 346px;
+  right: 88px;
+
+}
+.banner-p{
+padding: 25px;
+}
+.banner-btn{
+  padding: 16px;
+  position: absolute;
+  background: #efca13;
+  border-radius: 30px;
+  width: 261px;
+  color: #454343;
+  text-decoration: none;
+  top: 685px;
+  right: 63px;
+}
+
+
+.line-1{
+  position: relative;
+  top: 39%;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255,255,255,.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 2s steps(20) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 8em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}
