@@ -1,4 +1,8 @@
 @media (min-width: 100px) and (max-width: 575px) {
+  .marg-right {
+    margin-right: 7px;
+  }
+
   .cards {
     align-items: center;
     grid-template-columns: 1fr;
@@ -27,6 +31,13 @@
 
   .card-category-game{
     margin-bottom: 22px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 7px;
+    padding: 10px;
+  }
+
+  .card-category-game-2{
+    margin-top: 40px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 7px;
     padding: 10px;

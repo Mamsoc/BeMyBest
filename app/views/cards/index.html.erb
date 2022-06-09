@@ -1,33 +1,30 @@
-<h1 class="d-none h1" > Mon jeu personnalisé  </h1>
+<h1 class="h1" ></h1>
 
 <% if @cards.any? %>
 
   <div class="game-cards">
     <% @cards.each do |card| %>
-      <div class="card-category-game" id="card_<%= card.id %>">
+      <div class="card-category-game-2" id="card_<%= card.id %>">
         <% card_memory = @memories.find_by(card: card) %>
-        <h3 class="h3"> <%= card.question %> ? </h3>
 
         <% if card_memory %>
           <div class="card-image">
             <%= link_to project_card_path(@project, card) do %>
               <i class="fa-solid fa-pen-to-square card-game-edit "></i>
             <% end %>
-            <%= cl_image_tag card_memory.photo.key, class: "img-card d-block w-100"%> <br>
+            <%= cl_image_tag card_memory.photo.key, class: "d-block w-100"%> <br>
+              <h3 class="h3 text-justify"> <%= card.question %> ? </h3>
           </div>
           <%# Bouton masque pour edition depuis icone %>
           <%# <div class= "d-flex justify-content-center"> %>
             <%#= link_to "Sélectionner un souvenir", project_card_path(@project, card), class: "btn btn-flat" %>
           <%# </div> %>
           <div class="d-flex">
-            <p class="p w-25">Réponse : </p>
-            <div>
-              <h3 class = "h3 w-75"><%= card_memory.response %></h3>
-            </div>
+            <p class="p w-25"><%#= card_memory.legend %> </p>
           </div>
           <div class="card-form">
             <%= simple_form_for [@project, card_memory], html: {"data-turbo": false} do |f| %>
-              <%= f.input :response, label: "Modifier la réponse :", label_html: { class: 'p' }, input_html: { class: 'p' }%>
+              <%= f.input :response, label: "Réponse :", label_html: { class: 'p' }, input_html: { class: 'p' }%>
               <div class= "d-flex justify-content-center">
                 <%= f.submit class: "btn btn-flat w-100", value: "Enregistrer la réponse" %>
               </div>
@@ -45,7 +42,8 @@
   <p class="p">Le scenario est vide</p>
 <% end %>
 
-
-<%= link_to "Simuler le jeu",  project_games_path(@project), class: "btn btn-flat" %>
+<div class="d-flex justify-content-end marg-right">
+  <%= link_to "Simuler le jeu",  project_games_path(@project), class: "btn btn-flat" %>
+</div>
 
 <%= render "shared/navbar_dark" %>
